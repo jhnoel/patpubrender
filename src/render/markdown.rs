@@ -24,8 +24,8 @@ pub fn render_markdown(value: &PatentDocument) -> String {
 /// Render `value` with a caller-supplied section-placeholder template.
 ///
 /// The template is plain text with `{{placeholder}}` tokens — `frontmatter`,
-/// `title`, `abstract`, `description`, `claims`, or `body` (abstract +
-/// description + claims in source order). See [`crate::render::template`].
+/// `title`, `abstract`, `description`, or `claims`. See
+/// [`crate::render::template`].
 pub fn render_markdown_with_template(
     value: &PatentDocument,
     template: &str,
@@ -42,7 +42,6 @@ fn build_sections(value: &PatentDocument) -> Sections {
         }),
         description: render_parts(value, |part| matches!(part, DocumentPart::Description(_))),
         claims: render_parts(value, |part| matches!(part, DocumentPart::Claims(_))),
-        body: render_parts(value, |_| true),
     }
 }
 

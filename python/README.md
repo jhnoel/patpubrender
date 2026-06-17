@@ -26,7 +26,7 @@ doc.claims[0].number        # -> int
 doc.claims[0].text          # -> str
 doc.abstract_text           # -> str | None
 doc.to_markdown()           # -> str
-doc.to_markdown(template="{{frontmatter}}\n\n{{body}}")
+doc.to_markdown(template="{{frontmatter}}\n\n{{abstract}}\n\n{{claims}}")
 
 patpubrender.detect_format(xml)   # -> str, e.g. "UsptoGrantV47"
 ```
@@ -35,9 +35,9 @@ patpubrender.detect_format(xml)   # -> str, e.g. "UsptoGrantV47"
 
 `to_markdown` / `parse_to_markdown` accept an optional section-placeholder
 template. Placeholders: `{{frontmatter}}`, `{{title}}`, `{{abstract}}`,
-`{{description}}`, `{{claims}}`, `{{body}}`. Each expands to a fully-rendered
-block (`{{title}}` already includes its `# ` heading); the template controls
-section order and surrounding text.
+`{{description}}`, `{{claims}}`. Each expands to a fully-rendered block
+(`{{title}}` already includes its `# ` heading); the template controls section
+order and surrounding text.
 
 ## License
 

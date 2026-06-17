@@ -14,7 +14,7 @@ Initial release.
 - Render compact, front-mattered Markdown (`render_markdown`).
 - User-overridable output via section-placeholder templates
   (`render_markdown_with_template`; `{{frontmatter}}`, `{{title}}`,
-  `{{abstract}}`, `{{description}}`, `{{claims}}`, `{{body}}`).
+  `{{abstract}}`, `{{description}}`, `{{claims}}`).
 - Structured field extraction (`extract::claims`, `extract::abstract_text`,
   `render::biblio::extract_biblio`).
 - Optional `shard` feature: the `.zst` + `.idx` codec (write and read).

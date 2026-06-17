@@ -6,12 +6,13 @@
 //! them. There is no expression language and no dependency — substitution only.
 //!
 //! Recognized placeholders: `frontmatter`, `title`, `abstract`, `description`,
-//! `claims`, and `body` (abstract + description + claims in source order).
+//! and `claims`.
 
 use std::fmt;
 
 /// The default layout, reproducing the standard rendered document.
-pub const DEFAULT_TEMPLATE: &str = "{{frontmatter}}\n\n{{title}}\n\n{{body}}\n";
+pub const DEFAULT_TEMPLATE: &str =
+    "{{frontmatter}}\n\n{{title}}\n\n{{abstract}}\n\n{{description}}\n\n{{claims}}\n";
 
 /// A renderable section a placeholder can name.
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -21,7 +22,6 @@ pub enum Section {
     Abstract,
     Description,
     Claims,
-    Body,
 }
 
 impl Section {
@@ -32,7 +32,6 @@ impl Section {
             "abstract" => Section::Abstract,
             "description" => Section::Description,
             "claims" => Section::Claims,
-            "body" => Section::Body,
             _ => return None,
         })
     }
@@ -45,7 +44,6 @@ pub struct Sections {
     pub r#abstract: String,
     pub description: String,
     pub claims: String,
-    pub body: String,
 }
 
 impl Sections {
@@ -56,7 +54,6 @@ impl Sections {
             Section::Abstract => &self.r#abstract,
             Section::Description => &self.description,
             Section::Claims => &self.claims,
-            Section::Body => &self.body,
         }
     }
 }
@@ -88,7 +85,7 @@ impl fmt::Display for TemplateError {
             TemplateError::UnknownPlaceholder(name) => write!(
                 f,
                 "unknown template placeholder {{{{{name}}}}}; expected one of \
-                 frontmatter, title, abstract, description, claims, body"
+                 frontmatter, title, abstract, description, claims"
             ),
             TemplateError::UnterminatedPlaceholder => {
                 write!(
@@ -180,14 +177,14 @@ mod tests {
             r#abstract: "## Abstract\n\nAn abstract.".to_string(),
             description: "## Description\n\nText.".to_string(),
             claims: "## Claims\n\n1. A claim.".to_string(),
-            body: "## Abstract\n\nAn abstract.\n\n## Claims\n\n1. A claim.".to_string(),
         }
     }
 
     #[test]
-    fn default_template_orders_frontmatter_title_body() {
+    fn default_template_orders_frontmatter_title_then_sections() {
         let out = Template::default().render(&sections());
         assert!(out.starts_with("---\na: 1\n---\n\n# Widget\n\n## Abstract"));
+        assert!(out.ends_with("## Claims\n\n1. A claim."));
         assert!(
             !out.contains("\n\n\n"),
             "blank runs must be collapsed:\n{out}"

@@ -31,7 +31,7 @@ fn usage_exit() -> ! {
     eprintln!("      file/stdin -> stdout (or --output FILE)");
     eprintln!("      directory  -> all docs to stdout, or one .md per file into --output DIR");
     eprintln!("      --template: a .md template with {{frontmatter}}/{{title}}/{{abstract}}/");
-    eprintln!("                  {{description}}/{{claims}}/{{body}} placeholders");
+    eprintln!("                  {{description}}/{{claims}} placeholders");
     eprintln!(
         "  patpubrender shard write (--zip <zip> | --dir <dir>) [--output <dir>] [--limit <n>] [--jobs <n>]"
     );

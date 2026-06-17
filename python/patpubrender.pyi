@@ -39,4 +39,4 @@ class Document:
     def to_markdown(self, template: Optional[str] = None) -> str:
         """Render this document to Markdown, optionally with a section-placeholder
         template ({{frontmatter}}, {{title}}, {{abstract}}, {{description}},
-        {{claims}}, {{body}})."""
+        {{claims}})."""

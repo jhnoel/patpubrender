@@ -152,7 +152,7 @@ impl Document {
 
     /// Render this document to Markdown, optionally with a section-placeholder
     /// template (`{{frontmatter}}`, `{{title}}`, `{{abstract}}`,
-    /// `{{description}}`, `{{claims}}`, `{{body}}`).
+    /// `{{description}}`, `{{claims}}`).
     #[pyo3(signature = (template=None))]
     fn to_markdown(&self, template: Option<&str>) -> PyResult<String> {
         render(&self.doc, template)

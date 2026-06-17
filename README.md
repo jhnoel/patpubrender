@@ -34,11 +34,10 @@ the title, abstract, claims, and description.
 
 Override the default layout with a section-placeholder template — plain text
 with `{{placeholder}}` tokens. The placeholders are `frontmatter`, `title`,
-`abstract`, `description`, `claims`, and `body` (abstract + description + claims
-in source order). Each placeholder expands to a **fully-rendered block** — e.g.
-`{{title}}` already includes the `# ` heading and `{{abstract}}` its `## Abstract`
-heading — so the template only controls order and surrounding text. No expression
-language, no dependency.
+`abstract`, `description`, and `claims`. Each placeholder expands to a
+**fully-rendered block** — e.g. `{{title}}` already includes the `# ` heading and
+`{{abstract}}` its `## Abstract` heading — so the template only controls order and
+surrounding text. No expression language, no dependency.
 
 ```rust
 let tmpl = "{{title}}\n\n> Source: USPTO\n\n{{claims}}\n\n{{frontmatter}}";
@@ -71,7 +70,7 @@ patpubrender render [INPUT] [--output OUT] [--template FILE]
     file / stdin → stdout (or --output FILE)
     directory    → all docs concatenated to stdout, or one .md per file into --output DIR
     --template   → a .md template with {{frontmatter}}/{{title}}/{{abstract}}/
-                   {{description}}/{{claims}}/{{body}} placeholders
+                   {{description}}/{{claims}} placeholders
 
 patpubrender shard write (--zip ZIP | --dir DIR_OF_ZIPS) [--output DIR] [--limit N] [--jobs N]
     (requires --features ingest)
