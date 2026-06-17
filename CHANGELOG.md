@@ -1,23 +1,21 @@
 # Changelog
 
-All notable changes to this project are documented here. The format is based on
-[Keep a Changelog](https://keepachangelog.com/), and this project adheres to
-[Semantic Versioning](https://semver.org/).
+This project adheres to [Semantic Versioning](https://semver.org/).
 
-## [0.1.0] - Unreleased
+## [0.1.0] - 2026-06-17
 
-Initial release.
+First release.
 
-### Added
-- Parse USPTO patent grant/application XML and Green Book "APS" plain text into
-  a canonical document model (`parse_patent_xml`, `parse_patent_aps`).
-- Render compact, front-mattered Markdown (`render_markdown`).
-- User-overridable output via section-placeholder templates
-  (`render_markdown_with_template`; `{{frontmatter}}`, `{{title}}`,
-  `{{abstract}}`, `{{description}}`, `{{claims}}`).
-- Structured field extraction (`extract::claims`, `extract::abstract_text`,
-  `render::biblio::extract_biblio`).
-- Optional `shard` feature: the `.zst` + `.idx` archive — write/read codec and
-  bulk USPTO weekly-ZIP ingest, all under `patpubrender::shard`.
-- `patpubrender` CLI: `render`, `shard write`, `shard read`.
-- Python SDK (PyPI) with structured `Document` access and `to_markdown`.
+patpubrender parses USPTO patent grant and application XML, and the legacy Green
+Book "APS" text format, into one document model, then renders Markdown under a
+YAML frontmatter header. Schema version is detected from the source.
+
+- Parse: `parse_patent_xml`, `parse_patent_aps`, `detect_source_format`.
+- Render: `render_markdown`, and `render_markdown_with_template` over a
+  section-placeholder template (`frontmatter`, `title`, `abstract`,
+  `description`, `claims`).
+- Extract: bibliographic fields, claims, abstract.
+- Shards (`shard` feature): the `.zst`/`.idx` archive — write/read codec and
+  bulk weekly-ZIP ingest, under `patpubrender::shard`.
+- Command line: `render`, `shard write`, `shard read`.
+- Python extension (PyPI): parse to a `Document`, render Markdown.

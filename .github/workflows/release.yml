@@ -29,6 +29,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/create-gh-release-action@v1
+        with:
+          # Release notes come from the matching CHANGELOG.md section.
+          changelog: CHANGELOG.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
