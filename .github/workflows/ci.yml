@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  rust:
+    name: Rust (fmt, clippy, test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Format
+        run: cargo fmt --all --check
+      - name: Clippy (all features)
+        run: cargo clippy --all-features --all-targets -- -D warnings
+      - name: Test (default)
+        run: cargo test
+      - name: Test (all features)
+        run: cargo test --all-features
+
+  python:
+    name: Python bindings (build + smoke test)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Build + install wheel
+        working-directory: python
+        run: |
+          pip install maturin
+          maturin build --release --out dist
+          pip install --no-index --find-links dist patpubrender
+      - name: Import smoke test
+        run: python -c "import patpubrender; print(patpubrender.__version__)"

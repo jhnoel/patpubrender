@@ -1,4 +1,3 @@
-use crate::render::template::{Sections, Template, TemplateError};
 use crate::model::document::PatentDocument;
 use crate::model::{
     bibliographic::{
@@ -15,6 +14,7 @@ use crate::model::{
     opaque::{XmlAttribute, XmlFragment, XmlName},
     runs::Run,
 };
+use crate::render::template::{Sections, Template, TemplateError};
 
 /// Render `value` to Markdown using the default layout.
 pub fn render_markdown(value: &PatentDocument) -> String {

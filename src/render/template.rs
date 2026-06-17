@@ -91,7 +91,10 @@ impl fmt::Display for TemplateError {
                  frontmatter, title, abstract, description, claims, body"
             ),
             TemplateError::UnterminatedPlaceholder => {
-                write!(f, "unterminated template placeholder: '{{{{' with no closing '}}}}'")
+                write!(
+                    f,
+                    "unterminated template placeholder: '{{{{' with no closing '}}}}'"
+                )
             }
         }
     }
@@ -185,7 +188,10 @@ mod tests {
     fn default_template_orders_frontmatter_title_body() {
         let out = Template::default().render(&sections());
         assert!(out.starts_with("---\na: 1\n---\n\n# Widget\n\n## Abstract"));
-        assert!(!out.contains("\n\n\n"), "blank runs must be collapsed:\n{out}");
+        assert!(
+            !out.contains("\n\n\n"),
+            "blank runs must be collapsed:\n{out}"
+        );
     }
 
     #[test]

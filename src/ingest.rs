@@ -204,8 +204,14 @@ pub fn render_shard_from_zip(
         supplemental_skipped,
         unsupported_skipped,
         malformed_skipped,
-        zst_path: out_dir.join(format!("{stem}.zst")).to_string_lossy().to_string(),
-        idx_path: out_dir.join(format!("{stem}.idx")).to_string_lossy().to_string(),
+        zst_path: out_dir
+            .join(format!("{stem}.zst"))
+            .to_string_lossy()
+            .to_string(),
+        idx_path: out_dir
+            .join(format!("{stem}.idx"))
+            .to_string_lossy()
+            .to_string(),
         biblio_path: biblio_path.to_string_lossy().to_string(),
         manifest_path: manifest_path.to_string_lossy().to_string(),
         unsupported_path,

@@ -6,13 +6,13 @@
 //! a machine-loadable form, so a downstream store (the DuckDB catalog) can
 //! ingest the snapshot without re-parsing the source XML.
 
+use crate::json::json_string;
 use crate::model::document::PatentDocument;
 use crate::render::markdown::{
     applicant_names, assignee_names, bare_application_number, document_id, earliest_priority_date,
     filing_date, inventor_names, ipc_classifications, patent_number, publication_date,
     publication_number, title, us_classifications,
 };
-use crate::json::json_string;
 
 #[derive(Debug, Clone, Default)]
 pub struct BiblioRecord {

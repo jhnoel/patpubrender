@@ -86,6 +86,25 @@ When a directory is rendered to stdout, documents are separated by four newlines
 (`\n\n\n\n`) — an unambiguous record boundary, since the renderer never emits
 that sequence inside a document.
 
+## Python
+
+A Python SDK (structured `Document` access + `to_markdown`) is published to
+PyPI from [`python/`](python/):
+
+```bash
+pip install patpubrender
+```
+
+```python
+import patpubrender
+doc = patpubrender.parse(open("US12345678.xml").read())
+print(doc.title, doc.claims[0].text)
+md = doc.to_markdown(template="{{title}}\n\n{{claims}}")
+```
+
 ## License
 
-Licensed under the [Apache License, Version 2.0](LICENSE).
+Licensed under the [Apache License, Version 2.0](LICENSE). See [NOTICE](NOTICE).
+
+This project parses USPTO patent data formats but is not affiliated with or
+endorsed by the USPTO.

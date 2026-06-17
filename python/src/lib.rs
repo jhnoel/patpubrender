@@ -16,9 +16,7 @@ fn py_err<E: std::fmt::Display>(err: E) -> PyErr {
 
 fn render(doc: &PatentDocument, template: Option<&str>) -> PyResult<String> {
     match template {
-        Some(template) => {
-            ppr::render_markdown_with_template(doc, template).map_err(py_err)
-        }
+        Some(template) => ppr::render_markdown_with_template(doc, template).map_err(py_err),
         None => Ok(ppr::render_markdown(doc)),
     }
 }
@@ -59,7 +57,11 @@ struct Claim {
 impl Claim {
     fn __repr__(&self) -> String {
         let preview: String = self.text.chars().take(60).collect();
-        let ellipsis = if self.text.chars().count() > 60 { "…" } else { "" };
+        let ellipsis = if self.text.chars().count() > 60 {
+            "…"
+        } else {
+            ""
+        };
         format!("Claim(number={}, text={preview:?}{ellipsis})", self.number)
     }
 }

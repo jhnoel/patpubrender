@@ -24,12 +24,14 @@ fn main() {
         }],
         parts: vec![
             DocumentPart::BibliographicInformation(BibliographicInformation {
-                parts: vec![BibliographicPart::TechnicalInformation(TechnicalInformation {
-                    parts: vec![TechnicalInformationPart::TitleOfInvention(
-                        "Self-Sealing Widget".to_string(),
-                    )],
-                    ..Default::default()
-                })],
+                parts: vec![BibliographicPart::TechnicalInformation(
+                    TechnicalInformation {
+                        parts: vec![TechnicalInformationPart::TitleOfInvention(
+                            "Self-Sealing Widget".to_string(),
+                        )],
+                        ..Default::default()
+                    },
+                )],
                 ..Default::default()
             }),
             DocumentPart::AbstractSection(AbstractSection {
@@ -43,7 +45,9 @@ fn main() {
             }),
             DocumentPart::Claims(Claims {
                 parts: vec![ClaimsPart::Claim(Claim {
-                    content: vec![Run::Text("A self-sealing widget comprising a seal.".to_string())],
+                    content: vec![Run::Text(
+                        "A self-sealing widget comprising a seal.".to_string(),
+                    )],
                     ..Default::default()
                 })],
                 ..Default::default()

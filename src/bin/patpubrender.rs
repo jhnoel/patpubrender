@@ -32,9 +32,13 @@ fn usage_exit() -> ! {
     eprintln!("      directory  -> all docs to stdout, or one .md per file into --output DIR");
     eprintln!("      --template: a .md template with {{frontmatter}}/{{title}}/{{abstract}}/");
     eprintln!("                  {{description}}/{{claims}}/{{body}} placeholders");
-    eprintln!("  patpubrender shard write (--zip <zip> | --dir <dir>) [--output <dir>] [--limit <n>] [--jobs <n>]");
+    eprintln!(
+        "  patpubrender shard write (--zip <zip> | --dir <dir>) [--output <dir>] [--limit <n>] [--jobs <n>]"
+    );
     eprintln!("      (requires the `ingest` feature)");
-    eprintln!("  patpubrender shard read --shard <file.zst> (--key <k> | --offset <n> --length <l>) [--index <file.idx>] [--output <path>]");
+    eprintln!(
+        "  patpubrender shard read --shard <file.zst> (--key <k> | --offset <n> --length <l>) [--index <file.idx>] [--output <path>]"
+    );
     eprintln!("      (requires the `shard` feature)");
     process::exit(1);
 }
@@ -58,11 +62,17 @@ fn run_render(args: &[String]) {
         match args[i].as_str() {
             "--output" => {
                 i += 1;
-                output = Some(args.get(i).unwrap_or_else(|| fail("--output requires a path")).clone());
+                output = Some(
+                    args.get(i)
+                        .unwrap_or_else(|| fail("--output requires a path"))
+                        .clone(),
+                );
             }
             "--template" => {
                 i += 1;
-                let path = args.get(i).unwrap_or_else(|| fail("--template requires a path"));
+                let path = args
+                    .get(i)
+                    .unwrap_or_else(|| fail("--template requires a path"));
                 template = Some(
                     fs::read_to_string(path)
                         .unwrap_or_else(|e| fail(format!("reading template '{path}': {e}"))),
@@ -86,7 +96,11 @@ fn run_render(args: &[String]) {
         .is_some_and(|p| Path::new(p).is_dir());
 
     if is_dir {
-        render_dir(Path::new(input.as_deref().unwrap()), output.as_deref(), template);
+        render_dir(
+            Path::new(input.as_deref().unwrap()),
+            output.as_deref(),
+            template,
+        );
     } else {
         render_single(input.as_deref(), output.as_deref(), template);
     }
@@ -94,8 +108,9 @@ fn run_render(args: &[String]) {
 
 fn render_single(input: Option<&str>, output: Option<&str>, template: Option<&str>) {
     let xml = match input {
-        Some(path) if path != "-" => fs::read_to_string(path)
-            .unwrap_or_else(|e| fail(format!("reading '{path}': {e}"))),
+        Some(path) if path != "-" => {
+            fs::read_to_string(path).unwrap_or_else(|e| fail(format!("reading '{path}': {e}")))
+        }
         _ => {
             let mut buf = String::new();
             io::stdin()
@@ -149,7 +164,10 @@ fn render_dir(dir: &Path, output: Option<&str>, template: Option<&str>) {
                 .unwrap_or_else(|e| fail(format!("creating '{}': {e}", out_dir.display())));
             for path in &xml_files {
                 let md = render_xml(&read_file(path), Some(&path.to_string_lossy()), template);
-                let stem = path.file_stem().and_then(|s| s.to_str()).unwrap_or("document");
+                let stem = path
+                    .file_stem()
+                    .and_then(|s| s.to_str())
+                    .unwrap_or("document");
                 let out_path = out_dir.join(format!("{stem}.md"));
                 fs::write(&out_path, md)
                     .unwrap_or_else(|e| fail(format!("writing '{}': {e}", out_path.display())));
@@ -175,8 +193,8 @@ fn render_xml(xml: &str, label: Option<&str>, template: Option<&str>) -> String 
 }
 
 fn read_file(path: &Path) -> String {
-    let xml =
-        fs::read_to_string(path).unwrap_or_else(|e| fail(format!("reading '{}': {e}", path.display())));
+    let xml = fs::read_to_string(path)
+        .unwrap_or_else(|e| fail(format!("reading '{}': {e}", path.display())));
     if xml.trim().is_empty() {
         fail(format!("empty input '{}'", path.display()));
     }
@@ -191,7 +209,8 @@ fn has_xml_extension(path: &Path) -> bool {
 
 fn write_stdout(bytes: &[u8]) {
     let mut out = io::stdout();
-    out.write_all(bytes).unwrap_or_else(|e| fail(format!("writing stdout: {e}")));
+    out.write_all(bytes)
+        .unwrap_or_else(|e| fail(format!("writing stdout: {e}")));
     let _ = out.write_all(b"\n");
 }
 
@@ -226,11 +245,26 @@ fn shard_write(args: &[String]) {
     let mut i = 0;
     while i < args.len() {
         match args[i].as_str() {
-            "--zip" => { i += 1; zip = Some(arg(args, i, "--zip")); }
-            "--dir" => { i += 1; dir = Some(arg(args, i, "--dir")); }
-            "--output" => { i += 1; output = Some(arg(args, i, "--output")); }
-            "--limit" => { i += 1; limit = Some(parse_count(&arg(args, i, "--limit"), "--limit")); }
-            "--jobs" => { i += 1; jobs = Some(parse_count(&arg(args, i, "--jobs"), "--jobs")); }
+            "--zip" => {
+                i += 1;
+                zip = Some(arg(args, i, "--zip"));
+            }
+            "--dir" => {
+                i += 1;
+                dir = Some(arg(args, i, "--dir"));
+            }
+            "--output" => {
+                i += 1;
+                output = Some(arg(args, i, "--output"));
+            }
+            "--limit" => {
+                i += 1;
+                limit = Some(parse_count(&arg(args, i, "--limit"), "--limit"));
+            }
+            "--jobs" => {
+                i += 1;
+                jobs = Some(parse_count(&arg(args, i, "--jobs"), "--jobs"));
+            }
             other => fail(format!("unknown flag '{other}'")),
         }
         i += 1;
@@ -335,12 +369,30 @@ fn shard_read(args: &[String]) {
     let mut i = 0;
     while i < args.len() {
         match args[i].as_str() {
-            "--shard" => { i += 1; shard = Some(arg(args, i, "--shard")); }
-            "--index" => { i += 1; index = Some(arg(args, i, "--index")); }
-            "--key" => { i += 1; key = Some(arg(args, i, "--key")); }
-            "--offset" => { i += 1; offset = Some(parse_u64(&arg(args, i, "--offset"), "--offset")); }
-            "--length" => { i += 1; length = Some(parse_u64(&arg(args, i, "--length"), "--length")); }
-            "--output" => { i += 1; output = Some(arg(args, i, "--output")); }
+            "--shard" => {
+                i += 1;
+                shard = Some(arg(args, i, "--shard"));
+            }
+            "--index" => {
+                i += 1;
+                index = Some(arg(args, i, "--index"));
+            }
+            "--key" => {
+                i += 1;
+                key = Some(arg(args, i, "--key"));
+            }
+            "--offset" => {
+                i += 1;
+                offset = Some(parse_u64(&arg(args, i, "--offset"), "--offset"));
+            }
+            "--length" => {
+                i += 1;
+                length = Some(parse_u64(&arg(args, i, "--length"), "--length"));
+            }
+            "--output" => {
+                i += 1;
+                output = Some(arg(args, i, "--output"));
+            }
             other => fail(format!("unknown flag '{other}'")),
         }
         i += 1;
@@ -366,7 +418,9 @@ fn shard_read(args: &[String]) {
             let entry = entries
                 .iter()
                 .find(|e| e.doc_key == key)
-                .unwrap_or_else(|| fail(format!("key '{key}' not found in '{}'", idx_path.display())));
+                .unwrap_or_else(|| {
+                    fail(format!("key '{key}' not found in '{}'", idx_path.display()))
+                });
             (entry.pointer.offset, entry.pointer.length)
         }
         // Raw frame coordinates.

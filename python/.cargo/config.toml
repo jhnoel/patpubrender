@@ -1,8 +1,0 @@
-# pyo3 extension modules leave CPython symbols undefined, to be resolved by the
-# host interpreter at load time. maturin passes these link args automatically;
-# this config lets a plain `cargo build`/`cargo clippy` link locally on macOS too.
-[target.x86_64-apple-darwin]
-rustflags = ["-C", "link-arg=-undefined", "-C", "link-arg=dynamic_lookup"]
-
-[target.aarch64-apple-darwin]
-rustflags = ["-C", "link-arg=-undefined", "-C", "link-arg=dynamic_lookup"]

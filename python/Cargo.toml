@@ -5,6 +5,8 @@ edition = "2024"
 rust-version = "1.85"
 license = "Apache-2.0"
 description = "Python bindings for patpubrender — USPTO patent XML to Markdown."
+repository = "https://github.com/jhnoel/patpubrender"
+homepage = "https://github.com/jhnoel/patpubrender"
 publish = false
 
 # Own workspace root so `cargo`/maturin here never tries to join the core crate
