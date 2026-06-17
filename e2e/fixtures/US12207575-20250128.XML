@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-grant SYSTEM "us-patent-grant-v47-2022-02-17.dtd" [ ]>
+<us-patent-grant lang="EN" dtd-version="v4.7 2022-02-17" file="US12207575-20250128.XML" status="PRODUCTION" id="us-patent-grant" country="US" date-produced="20250108" date-publ="20250128">
+<us-bibliographic-data-grant>
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>12207575</doc-number>
+<kind>B2</kind>
+<date>20250128</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>18374261</doc-number>
+<date>20230928</date>
+</document-id>
+</application-reference>
+<us-application-series-code>18</us-application-series-code>
+<us-term-of-grant><us-term-extension>0</us-term-extension></us-term-of-grant>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>01</class>
+<subclass>B</subclass>
+<main-group>59</main-group>
+<subgroup>043</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>01</class>
+<subclass>B</subclass>
+<main-group>49</main-group>
+<subgroup>06</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>01</class>
+<subclass>B</subclass>
+<main-group>59</main-group>
+<subgroup>06</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>01</class>
+<subclass>C</subclass>
+<main-group>7</main-group>
+<subgroup>08</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>01</class>
+<subclass>C</subclass>
+<main-group>7</main-group>
+<subgroup>20</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>01</class>
+<subclass>C</subclass>
+<main-group>15</main-group>
+<subgroup>00</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>A</section>
+<class>01</class>
+<subclass>C</subclass>
+<main-group>17</main-group>
+<subgroup>00</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>B</section>
+<class>60</class>
+<subclass>D</subclass>
+<main-group>1</main-group>
+<subgroup>07</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>N</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classifications-cpc>
+<main-cpc>
+<classification-cpc>
+<cpc-version-indicator><date>20130101</date></cpc-version-indicator>
+<section>A</section>
+<class>01</class>
+<subclass>B</subclass>
+<main-group>49</main-group>
+<subgroup>06</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+<scheme-origination-code>C</scheme-origination-code>
+</classification-cpc>
+</main-cpc>
+<further-cpc>
+<classification-cpc>
+<cpc-version-indicator><date>20130101</date></cpc-version-indicator>
+<section>A</section>
+<class>01</class>
+<subclass>B</subclass>
+<main-group>59</main-group>
+<subgroup>043</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+<scheme-origination-code>C</scheme-origination-code>
+</classification-cpc>
+<classification-cpc>
+<cpc-version-indicator><date>20130101</date></cpc-version-indicator>
+<section>A</section>
+<class>01</class>
+<subclass>B</subclass>
+<main-group>59</main-group>
+<subgroup>066</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+<scheme-origination-code>C</scheme-origination-code>
+</classification-cpc>
+<classification-cpc>
+<cpc-version-indicator><date>20130101</date></cpc-version-indicator>
+<section>A</section>
+<class>01</class>
+<subclass>C</subclass>
+<main-group>7</main-group>
+<subgroup>08</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+<scheme-origination-code>C</scheme-origination-code>
+</classification-cpc>
+<classification-cpc>
+<cpc-version-indicator><date>20130101</date></cpc-version-indicator>
+<section>A</section>
+<class>01</class>
+<subclass>C</subclass>
+<main-group>7</main-group>
+<subgroup>208</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+<scheme-origination-code>C</scheme-origination-code>
+</classification-cpc>
+<classification-cpc>
+<cpc-version-indicator><date>20130101</date></cpc-version-indicator>
+<section>A</section>
+<class>01</class>
+<subclass>C</subclass>
+<main-group>15</main-group>
+<subgroup>005</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+<scheme-origination-code>C</scheme-origination-code>
+</classification-cpc>
+<classification-cpc>
+<cpc-version-indicator><date>20130101</date></cpc-version-indicator>
+<section>A</section>
+<class>01</class>
+<subclass>C</subclass>
+<main-group>17</main-group>
+<subgroup>001</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+<scheme-origination-code>C</scheme-origination-code>
+</classification-cpc>
+<classification-cpc>
+<cpc-version-indicator><date>20130101</date></cpc-version-indicator>
+<section>B</section>
+<class>60</class>
+<subclass>D</subclass>
+<main-group>1</main-group>
+<subgroup>07</subgroup>
+<symbol-position>L</symbol-position>
+<classification-value>A</classification-value>
+<action-date><date>20250128</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+<scheme-origination-code>C</scheme-origination-code>
+</classification-cpc>
+</further-cpc>
+</classifications-cpc>
+<invention-title id="d2e43">Apparatus for combining planting implements</invention-title>
+<us-references-cited>
+<us-citation>
+<patcit num="00001">
+<document-id>
+<country>US</country>
+<doc-number>2531768</doc-number>
+<kind>A</kind>
+<name>Cline</name>
+<date>19501100</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00002">
+<document-id>
+<country>US</country>
+<doc-number>2888997</doc-number>
+<kind>A</kind>
+<name>Fraga</name>
+<date>19590600</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00003">
+<document-id>
+<country>US</country>
+<doc-number>3398707</doc-number>
+<kind>A</kind>
+<name>McClenny</name>
+<date>19680800</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00004">
+<document-id>
+<country>US</country>
+<doc-number>3472528</doc-number>
+<kind>A</kind>
+<name>Richey</name>
+<date>19691000</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00005">
+<document-id>
+<country>US</country>
+<doc-number>3716253</doc-number>
+<kind>A</kind>
+<name>Gniffke</name>
+<date>19730200</date>
+</document-id>
+</patcit>
+<category>cited by examiner</category>
+<classification-cpc-text>B60D 1/141</classification-cpc-text>
+<classification-national><country>US</country><main-classification>2804162</main-classification></classification-national>
+</us-citation>
+<us-citation>
+<patcit num="00006">
+<document-id>
+<country>US</country>
+<doc-number>3810434</doc-number>
+<kind>A</kind>
+<name>van der Lely et al.</name>
+<date>19740500</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00007">
+<document-id>
+<country>US</country>
+<doc-number>3822656</doc-number>
+<kind>A</kind>
+<name>Lalor</name>
+<date>19740700</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00008">
+<document-id>
+<country>US</country>
+<doc-number>3893515</doc-number>
+<kind>A</kind>
+<name>Sadler</name>
+<date>19750700</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00009">
+<document-id>
+<country>US</country>
+<doc-number>4088083</doc-number>
+<kind>A</kind>
+<name>Dail, Jr.</name>
+<date>19780500</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00010">
+<document-id>
+<country>US</country>
+<doc-number>4164985</doc-number>
+<kind>A</kind>
+<name>Bobard</name>
+<date>19790800</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00011">
+<document-id>
+<country>US</country>
+<doc-number>4195860</doc-number>
+<kind>A</kind>
+<name>Helams</name>
+<date>19800400</date>
+</document-id>
+</patcit>
+<category>cited by examiner</category>
+<classification-cpc-text>A01D 67/005</classification-cpc-text>
+<classification-national><country>US</country><main-classification> 56503</main-classification></classification-national>
+</us-citation>
+<us-citation>
+<patcit num="00012">
+<document-id>
+<country>US</country>
+<doc-number>4235376</doc-number>
+<kind>A</kind>
+<name>Cohen et al.</name>
+<date>19801100</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00013">
+<document-id>
+<country>US</country>
+<doc-number>4340240</doc-number>
+<kind>A</kind>
+<name>Anderson</name>
+<date>19820700</date>
+</document-id>
+</patcit>
+<category>cited by examiner</category>
+<classification-cpc-text>B60D 1/07</classification-cpc-text>
+<classification-national><country>US</country><main-classification>2804162</main-classification></classification-national>
+</us-citation>
+<us-citation>
+<patcit num="00014">
+<document-id>
+<country>US</country>
+<doc-number>4991781</doc-number>
+<kind>A</kind>
+<name>Barbieri</name>
+<date>19910200</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00015">
+<document-id>
+<country>US</country>
+<doc-number>5029650</doc-number>
+<kind>A</kind>
+<name>Smit</name>
+<date>19910700</date>
+</document-id>
+</patcit>
+<category>cited by examiner</category>
+<classification-cpc-text>A01B 59/062</classification-cpc-text>
+<classification-national><country>US</country><main-classification>172272</main-classification></classification-national>
+</us-citation>
+<us-citation>
+<patcit num="00016">
+<document-id>
+<country>US</country>
+<doc-number>5158411</doc-number>
+<kind>A</kind>
+<name>Kemmner</name>
+<date>19921000</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00017">
+<document-id>
+<country>US</country>
+<doc-number>5461993</doc-number>
+<kind>A</kind>
+<name>Ikumoto et al.</name>
+<date>19951000</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00018">
+<document-id>
+<country>US</country>
+<doc-number>5730227</doc-number>
+<kind>A</kind>
+<name>Hund</name>
+<date>19980300</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00019">
+<document-id>
+<country>US</country>
+<doc-number>6193259</doc-number>
+<kind>B1</kind>
+<name>Rupard</name>
+<date>20010200</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00020">
+<document-id>
+<country>US</country>
+<doc-number>6595299</doc-number>
+<kind>B2</kind>
+<name>Heller</name>
+<date>20030700</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00021">
+<document-id>
+<country>US</country>
+<doc-number>7048070</doc-number>
+<kind>B2</kind>
+<name>Powell</name>
+<date>20060500</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00022">
+<document-id>
+<country>US</country>
+<doc-number>7461702</doc-number>
+<kind>B2</kind>
+<name>Farnsworth</name>
+<date>20081200</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00023">
+<document-id>
+<country>US</country>
+<doc-number>2002/0024195</doc-number>
+<kind>A1</kind>
+<name>Heller</name>
+<date>20020200</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00024">
+<document-id>
+<country>US</country>
+<doc-number>2004/0256124</doc-number>
+<kind>A1</kind>
+<name>White</name>
+<date>20041200</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00025">
+<document-id>
+<country>US</country>
+<doc-number>2006/0081382</doc-number>
+<kind>A1</kind>
+<name>Tuttle</name>
+<date>20060400</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00026">
+<document-id>
+<country>CN</country>
+<doc-number>107155428</doc-number>
+<kind>A</kind>
+<date>20170900</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00027">
+<document-id>
+<country>DE</country>
+<doc-number>1801660</doc-number>
+<kind>A1</kind>
+<date>19690400</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00028">
+<document-id>
+<country>DE</country>
+<doc-number>19953073</doc-number>
+<kind>A1</kind>
+<date>20010500</date>
+</document-id>
+</patcit>
+<category>cited by examiner</category>
+<classification-cpc-text>A01B 59/062</classification-cpc-text>
+</us-citation>
+<us-citation>
+<patcit num="00029">
+<document-id>
+<country>EP</country>
+<doc-number>201785</doc-number>
+<kind>A3</kind>
+<date>19861100</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00030">
+<document-id>
+<country>EP</country>
+<doc-number>313835</doc-number>
+<kind>B1</kind>
+<date>19890500</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00031">
+<document-id>
+<country>EP</country>
+<doc-number>327869</doc-number>
+<kind>A1</kind>
+<date>19890800</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00032">
+<document-id>
+<country>FR</country>
+<doc-number>2687536</doc-number>
+<date>19930800</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<patcit num="00033">
+<document-id>
+<country>FR</country>
+<doc-number>3024322</doc-number>
+<date>20160200</date>
+</document-id>
+</patcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<nplcit num="00034">
+<othercit>Plotmaster; advertisement from Quality Whitetails magazine, Apr./May 2014 edition.</othercit>
+</nplcit>
+<category>cited by applicant</category>
+</us-citation>
+<us-citation>
+<nplcit num="00035">
+<othercit>The Firminator; Ranew's Outdoor Equipment; advertisement from Quality Whitetails magazine, Apr./May 2014 edition.</othercit>
+</nplcit>
+<category>cited by applicant</category>
+</us-citation>
+</us-references-cited>
+<number-of-claims>20</number-of-claims>
+<us-exemplary-claim>1</us-exemplary-claim>
+<us-field-of-classification-search>
+<classification-cpc-text>A01B 49/06</classification-cpc-text>
+<classification-cpc-text>A01B 59/043</classification-cpc-text>
+<classification-cpc-text>A01C 7/208</classification-cpc-text>
+<classification-cpc-text>A01C 15/005</classification-cpc-text>
+</us-field-of-classification-search>
+<figures>
+<number-of-drawing-sheets>8</number-of-drawing-sheets>
+<number-of-figures>8</number-of-figures>
+</figures>
+<us-related-documents>
+<continuation>
+<relation>
+<parent-doc>
+<document-id>
+<country>US</country>
+<doc-number>16952521</doc-number>
+<date>20201119</date>
+</document-id>
+<parent-grant-document>
+<document-id>
+<country>US</country>
+<doc-number>11770990</doc-number>
+</document-id>
+</parent-grant-document>
+</parent-doc>
+<child-doc>
+<document-id>
+<country>US</country>
+<doc-number>18374261</doc-number>
+</document-id>
+</child-doc>
+</relation>
+</continuation>
+<continuation>
+<relation>
+<parent-doc>
+<document-id>
+<country>US</country>
+<doc-number>15898843</doc-number>
+<date>20180219</date>
+</document-id>
+<parent-grant-document>
+<document-id>
+<country>US</country>
+<doc-number>10863664</doc-number>
+<date>20201215</date>
+</document-id>
+</parent-grant-document>
+</parent-doc>
+<child-doc>
+<document-id>
+<country>US</country>
+<doc-number>16952521</doc-number>
+</document-id>
+</child-doc>
+</relation>
+</continuation>
+<continuation>
+<relation>
+<parent-doc>
+<document-id>
+<country>US</country>
+<doc-number>15231460</doc-number>
+<date>20160808</date>
+</document-id>
+<parent-grant-document>
+<document-id>
+<country>US</country>
+<doc-number>9924624</doc-number>
+<date>20180327</date>
+</document-id>
+</parent-grant-document>
+</parent-doc>
+<child-doc>
+<document-id>
+<country>US</country>
+<doc-number>15898843</doc-number>
+</document-id>
+</child-doc>
+</relation>
+</continuation>
+<us-provisional-application>
+<document-id>
+<country>US</country>
+<doc-number>62201641</doc-number>
+<date>20150806</date>
+</document-id>
+</us-provisional-application>
+<related-publication>
+<document-id>
+<country>US</country>
+<doc-number>20240016073</doc-number>
+<kind>A1</kind>
+<date>20240118</date>
+</document-id>
+</related-publication>
+</us-related-documents>
+<us-parties>
+<us-applicants>
+<us-applicant sequence="001" app-type="applicant" designation="us-only">
+<addressbook>
+<last-name>Cromwell</last-name>
+<first-name>Jeffrey Howard</first-name>
+<address>
+<city>Camden</city>
+<state>AL</state>
+<country>US</country>
+</address>
+</addressbook>
+<residence>
+<country>US</country>
+</residence>
+</us-applicant>
+</us-applicants>
+<inventors>
+<inventor sequence="001" designation="us-only">
+<addressbook>
+<last-name>Cromwell</last-name>
+<first-name>Jeffrey Howard</first-name>
+<address>
+<city>Camden</city>
+<state>AL</state>
+<country>US</country>
+</address>
+</addressbook>
+</inventor>
+</inventors>
+<agents>
+<agent sequence="01" rep-type="attorney">
+<addressbook>
+<last-name>Hill</last-name>
+<first-name>Jonathan C. (&#x201c;Rudy&#x201d;)</first-name>
+<address>
+<country>unknown</country>
+</address>
+</addressbook>
+</agent>
+<agent sequence="02" rep-type="attorney">
+<addressbook>
+<last-name>Gipson</last-name>
+<first-name>Jake M.</first-name>
+<address>
+<country>unknown</country>
+</address>
+</addressbook>
+</agent>
+<agent sequence="03" rep-type="attorney">
+<addressbook>
+<orgname>Bradley Arant Boult Cummings LLP</orgname>
+<address>
+<country>unknown</country>
+</address>
+</addressbook>
+</agent>
+</agents>
+</us-parties>
+<examiners>
+<primary-examiner>
+<last-name>Torres</last-name>
+<first-name>Alicia</first-name>
+<department>3671</department>
+</primary-examiner>
+</examiners>
+</us-bibliographic-data-grant>
+<abstract id="abstract">
+<p id="p-0001" num="0000">An apparatus for combining planting implements enables an operator of a tractor to use both a conventional cultivating implement and a conventional broadcasting implement simultaneously. The apparatus is rigidly affixed to a conventional cultivating implement and comprises a support frame, a pair of brackets, and a connection bar. In combination, the support frame, pair of brackets, and connection bar provide a three-point connection whereby a conventional broadcasting implement may be attached thereto, thus enabling an operator of a tractor to use both a conventional cultivating implement and a conventional broadcasting implement simultaneously. In operation, at least a portion of the conventional cultivating implements disposed behind the conventional broadcasting implement when the conventional broadcasting implement is attached to the support frame, thereby allowing simultaneous cultivation and broadcasting of constituents.</p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="Fig-EMI-D00000" num="00000">
+<img id="EMI-D00000" he="120.31mm" wi="156.97mm" file="US12207575-20250128-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="Fig-EMI-D00001" num="00001">
+<img id="EMI-D00001" he="134.87mm" wi="148.84mm" file="US12207575-20250128-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="Fig-EMI-D00002" num="00002">
+<img id="EMI-D00002" he="130.81mm" wi="195.83mm" file="US12207575-20250128-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="Fig-EMI-D00003" num="00003">
+<img id="EMI-D00003" he="125.48mm" wi="134.70mm" file="US12207575-20250128-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="Fig-EMI-D00004" num="00004">
+<img id="EMI-D00004" he="110.41mm" wi="160.19mm" file="US12207575-20250128-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="Fig-EMI-D00005" num="00005">
+<img id="EMI-D00005" he="129.46mm" wi="169.16mm" file="US12207575-20250128-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="Fig-EMI-D00006" num="00006">
+<img id="EMI-D00006" he="99.48mm" wi="173.14mm" file="US12207575-20250128-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="Fig-EMI-D00007" num="00007">
+<img id="EMI-D00007" he="114.47mm" wi="169.84mm" file="US12207575-20250128-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="Fig-EMI-D00008" num="00008">
+<img id="EMI-D00008" he="214.46mm" wi="168.66mm" file="US12207575-20250128-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?RELAPP description="Other Patent Relations" end="lead"?>
+<heading id="h-0001" level="1">CROSS-REFERENCE TO RELATED APPLICATIONS</heading>
+<p id="p-0002" num="0001">This application is a continuation of U.S. application Ser. No. 16/952,521 entitled &#x201c;Apparatus for Combining Planting Implements&#x201d; and filed on Nov. 19, 2020, which is a continuation of U.S. application Ser. No. 15/898,843 entitled &#x201c;Apparatus for Combining Planting Implements&#x201d; and filed on Feb. 19, 2018, which is a continuation of U.S. application Ser. No. 15/231,460 entitled &#x201c;Apparatus for Combining Planting Implements&#x201d; and filed on Aug. 8, 2016, which claims the benefit of and priority to U.S. Provisional Patent Application No. 62/201,641 entitled &#x201c;Combination Bracket for Cultivating Implement&#x201d; and filed on Aug. 6, 2015. The contents of each of the foregoing applications are incorporated herein by reference in their entirety.</p>
+<?RELAPP description="Other Patent Relations" end="tail"?>
+<?BRFSUM description="Brief Summary" end="lead"?>
+<heading id="h-0002" level="1">BACKGROUND OF THE INVENTION</heading>
+<p id="p-0003" num="0002">Hunters often plant food plots to provide feed and nutrition to the game they are hunting, such as deer and wild turkey. The planting process typically involves the use of a tractor and at least two of its standard implements: a cultivating implement, such as a disk harrow, to break up the soil and a broadcasting implement, such as a broadcast spreader, to disperse seed and fertilizer into the turned-up earth.</p>
+<p id="p-0004" num="0003">Such cultivating and broadcasting implements may also be used by farmers to plant crops, and the invention disclosed herein works equally well in farming applications. For purposes of this application, reference is made to a disk harrow as an exemplary cultivating implement and a broadcast spreader as an exemplary broadcasting implement. The invention disclosed herein works equally well with many other combinations of cultivating and broadcasting implements.</p>
+<p id="p-0005" num="0004">Prior to the invention disclosed herein, a typical process for planting food plots or other crops using a tractor, a cultivating implement, and a broadcasting implement required the following steps: attach the cultivating implement to the tractor using the tractor's standard means for implement connection, or three-point hitch; operate the tractor to pull the cultivating implement over an area of ground to cultivate it and expose previously submerged soil; disconnect the cultivating implement from the tractor; attach a broadcasting implement to the tractor using the tractor's three-point hitch; connect the tractor's power take-off (&#x201c;PTO&#x201d;) to the broadcasting implement; add desired constituents to the broadcasting implement, such as seed and fertilizer; operate the tractor and broadcasting implement to broadcast the constituents over the turned up soil; disconnect the broadcasting implement from the tractor; reattach the cultivating implement to the tractor using the tractor's three-point hitch; and operate the tractor to pull the cultivating implement over the cultivated area to cover up the seed and fertilizer. The last two steps of the process may often be accomplished by other means, but, as a practical matter, the cultivating implement is often used both to disturb the soil initially and later to cover up the broadcasted constituents.</p>
+<p id="p-0006" num="0005">The process for disconnecting the cultivating implement and attaching the broadcasting implement, and vice versa, is not an easy one to accomplish, especially out in the field, where it may be difficult to find flat, solid terrain to facilitate the changing out of the implements (and lining up the connection points of the tractor's three-point hitch with the corresponding connection points on the implement to be attached). Moreover, if multiple locations are to be planted, the planting process requires either (1) changing out the implements a large number of times, which makes the planting process more time consuming, runs the risk of losing the means for connecting the respective implements to the tractor (such as hitch pins), requires additional labor; and increases the likelihood of damaging equipment or injuring the operator(s); or (2) traveling to each planting location three separate times&#x2014;one to cultivate the soil (with the cultivating implement), one to disperse seed and fertilizer (with the broadcasting implement), and one to cover up or bury the seed and fertilizer in the soil (with the cultivating implement). This latter process adds time to the planting process, causes more wear and tear on the tractor and respective implements, and is more expensive to the operator in terms of fuel costs and wear and tear on equipment.</p>
+<p id="p-0007" num="0006">The invention disclosed herein eliminates these problems by enabling its user to operate a tractor with both a cultivating implement and a broadcasting implement, such as a disk harrow and a broadcast spreader, connected to the tractor and serving their respective functions at the same time. This arrangement eliminates the need to switch out implements repeatedly or the requirement to visit planting sites multiple times, thereby saving time, money, labor, and wear and tear on equipment. The invention disclosed herein further increases the efficiency of the planting process by enabling one to operate a tractor with multiple conventional cultivating and broadcasting implements in combination, connected to the tractor and serving their respective functions at the same time.</p>
+<heading id="h-0003" level="1">BRIEF SUMMARY OF THE INVENTION</heading>
+<p id="p-0008" num="0007">An apparatus for combining planting implements according to an embodiment of the present disclosure enables an operator of a tractor to use a conventional cultivating implement and a conventional broadcasting implement simultaneously. As used herein, &#x201c;cultivating implement&#x201d; refers to any one of a number of implements that is typically attached to and used in connection with a tractor to manipulate earth without the need for the tractor's PTO connection. A &#x201c;broadcasting implement&#x201d; as used herein is any one of a number of implements that is typically attached to and used in connection with a tractor to broadcast constituents, such as seed and fertilizer, toward the earth&#x2014;usually earth that has recently been tilled or otherwise disturbed. This broadcasting function typically requires independent rotary power, such as that which may be provided through a tractor's PTO connection.</p>
+<p id="p-0009" num="0008">An apparatus according to an embodiment of the present disclosure comprises a support frame, a pair of brackets, and a connection bar. The support frame of the apparatus comprises two substantially vertical members and a lateral member, and may further comprise one or more frontward support members and one or more rearward support members. Lower ends of the substantially vertical members of the support frame are rigidly affixed to a frame of a cultivating implement by one of any number of suitable means known in the art, such as by welding or by attachment through fasteners. One or more rearward support members may be incorporated into the support frame to provide additional lateral support. In the apparatus according to an embodiment of the present disclosure, a pair of rearward support members run diagonally from upper ends of the substantially vertical members of the support frame to a more rearward portion of the frame of a cultivating implement and are rigidly affixed at both ends.</p>
+<p id="p-0010" num="0009">The lateral member of the support frame of the apparatus spans substantially horizontally across the top of the substantially vertical members and is rigidly affixed to them by one of any number of suitable means known in the art, such as by welding or fasteners. One or more frontward support members may be incorporated into the support frame to provide additional lateral support. In the apparatus according to an embodiment of the present disclosure, a pair of frontward support members run diagonally from a forward-facing, side of the lateral member of the support frame to a frontward portion of the frame of a cultivating implement and are rigidly affixed at both ends.</p>
+<p id="p-0011" num="0010">A pair of brackets are rigidly affixed to inside walls of the substantially vertical members of the support frame such that the brackets are inwardly opposed to one another and positioned approximately halfway in between mid-points of the substantially vertical members and their upper ends, said substantially vertical members being spaced at a distance from one another sufficient to render the brackets a suitable distance apart from one another such that said distance approximates that of the distance between the lower two connection points of the conventional three-point hitch connection system well known in the art and incorporated into a broadcasting implement to be connected. The brackets are disposed to accept the protrusions of a conventional broadcasting implement that form its two lower connection points. In the apparatus according to an embodiment of the present disclosure, the brackets are U-shaped, angled rearwardly, and have holes in their frontward and rearward faces. These holes may be aligned with the holes in the protrusions of a broadcasting implement to allow the broadcasting implement to be attached to the support frame by one of any number of means well known in the art, such as by hitch pins.</p>
+<p id="p-0012" num="0011">A connection bar is rigidly affixed to the top of the lateral member approximately at its mid-point. The connection bar runs vertically from the lateral member upward. In the apparatus according to an embodiment of the present disclosure, the width of the connection bar is greater than the width of the lateral member, such that a frontward portion of the connection bar extends down in front of the lateral member to provide an additional anchor point for one or more frontward support members. At its upper end, the connection bar has a hole (if solid) or holes (if hollow) running through its sides, such that if an axis were drawn through the hole or holes, it would be perpendicular to the direction of travel of the implement and situated in a horizontal plane. The height of the connection bar is selected to render its hole or holes, in combination with the holes in the brackets, to positionally mirror the connection points of a conventional broadcasting implement's three point hitch connection, thereby permitting the broadcasting implement to be attached to the support frame, said attachment to be accomplished by one of any number of means well known in the art, such as by hitch pins.</p>
+<p id="p-0013" num="0012">The apparatus according to an embodiment of the present disclosure is affixed to a cultivating implement. Upon affixation, a broadcasting implement may then be attached to the apparatus using the connection points provided by the brackets and connection bar, which in effect serve to replace a tractor's three-point hitch system by which the broadcasting implement would typically be connected to a tractor. The combined system&#x2014;cultivating implement, apparatus, and broadcasting implement, in combination&#x2014;may then be connected to a tractor using the connection points of the cultivating implement's three point hitch connection. The tractor's PTO may then be connected to the broadcasting implement, permitting simultaneous operation of both a cultivating implement and a broadcasting implement.</p>
+<p id="p-0014" num="0013">It is an advantage of the present disclosure that the apparatus allows an operator of a tractor to operate simultaneously multiple conventional planting implements, particularly a cultivating implement and a broadcasting implement, and, more particularly, implements well known in the art that he or she may already own. It is a further advantage of the present disclosure that the apparatus enables a user to cultivate soil and to broadcast seed and fertilizer into the soil simultaneously using conventional cultivating and broadcasting implements. It is a further advantage of the present disclosure that the apparatus allows an operator to use multiple conventional planting implements, such as a cultivating implement and a broadcasting implement, simultaneously, with at least a portion of the cultivating implement disposed behind the broadcasting implement to permit constituent broadcasting and cover-up to be performed simultaneously.</p>
+<p id="p-0015" num="0014">For purposes of summarizing the invention, certain aspects, advantages, and novel features of the invention have been described herein. It is to be understood that not necessarily all such advantages may be achieved in accordance with any one particular embodiment of the invention. Thus, the invention may be embodied or carried out in a manner that achieves or optimizes one advantage or group of advantages as taught herein without necessarily achieving other advantages as may be taught or suggested herein.</p>
+<p id="p-0016" num="0015">These and other embodiments of the present invention will also become readily apparent to those skilled in the art from the following detailed description of an exemplary embodiment having reference to the attached figures, the invention not being limited to any particular embodiment(s) disclosed.</p>
+<?BRFSUM description="Brief Summary" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<description-of-drawings>
+<heading id="h-0004" level="1">BRIEF DESCRIPTION OF THE DRAWINGS</heading>
+<p id="p-0017" num="0016"><figref idref="DRAWINGS">FIG. <b>1</b></figref> is a perspective view of a conventional broadcasting implement, a broadcast spreader.</p>
+<p id="p-0018" num="0017"><figref idref="DRAWINGS">FIG. <b>2</b></figref> is a perspective view of a conventional cultivating implement, a disk harrow.</p>
+<p id="p-0019" num="0018"><figref idref="DRAWINGS">FIG. <b>3</b></figref> is a perspective view of an apparatus according to an embodiment of the present disclosure.</p>
+<p id="p-0020" num="0019"><figref idref="DRAWINGS">FIG. <b>4</b></figref> is a rear view of the apparatus of <figref idref="DRAWINGS">FIG. <b>3</b></figref>.</p>
+<p id="p-0021" num="0020"><figref idref="DRAWINGS">FIG. <b>5</b></figref> is a rear view of the apparatus of <figref idref="DRAWINGS">FIG. <b>3</b></figref> depicting the apparatus rigidly affixed to an upper portion of a frame of the disk harrow depicted in <figref idref="DRAWINGS">FIG. <b>2</b></figref>.</p>
+<p id="p-0022" num="0021"><figref idref="DRAWINGS">FIG. <b>6</b></figref> is a front view of the apparatus of <figref idref="DRAWINGS">FIG. <b>3</b></figref>.</p>
+<p id="p-0023" num="0022"><figref idref="DRAWINGS">FIG. <b>7</b></figref> is a front view of the apparatus of <figref idref="DRAWINGS">FIG. <b>3</b></figref> depicting the apparatus rigidly affixed to the upper portion of the frame of the disk harrow depicted in <figref idref="DRAWINGS">FIG. <b>2</b></figref>.</p>
+<p id="p-0024" num="0023"><figref idref="DRAWINGS">FIG. <b>8</b></figref> is a front view of the apparatus of <figref idref="DRAWINGS">FIG. <b>3</b></figref> depicting the apparatus linking the broadcast spreader of <figref idref="DRAWINGS">FIG. <b>1</b></figref> with the disk harrow of <figref idref="DRAWINGS">FIG. <b>2</b></figref>.</p>
+</description-of-drawings>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?DETDESC description="Detailed Description" end="lead"?>
+<p id="p-0025" num="0024">Repeat use of reference characters throughout the present specification and appended drawings is intended to represent the same or analogous features or elements of the invention.</p>
+<heading id="h-0005" level="1">DETAILED DESCRIPTION OF THE INVENTION</heading>
+<p id="p-0026" num="0025">The invention described herein is to be used to combine a conventional cultivating implement known in the art with a conventional broadcasting implement known in the art and, more specifically, to be used to permit a conventional cultivating implement and a conventional broadcasting implement to be combined and used simultaneously. Accordingly, two conventional planting implements to which the invention described herein may be applied are depicted and described first, followed by a detailed description of a preferred embodiment of the invention. The invention described herein may be used to combine other planting implements known in the art, said combinations being readily ascertainable by persons of skill in the art after reviewing the instant disclosure. Further, the dimensions of the invention described herein are in part dependent upon the standard means of connecting implements to tractors known in the art, namely the three-point hitch. The dimensions of the three-point hitch, in turn, vary according to the power of the tractor and the size of the implements being used. It will be readily understood by a person of skill in the art to adjust the dimensions of the components of the invention described herein based on the size of the tractor and implements to be used and the respective dimensions of their three-point hitch connections.</p>
+<p id="p-0027" num="0026">Referring to <figref idref="DRAWINGS">FIG. <b>1</b></figref>, a conventional broadcasting implement, broadcast spreader <b>100</b>, comprises a funnel <b>110</b>, a frame <b>120</b>, a PTO connection <b>130</b>, a dispersion control lever <b>140</b>, and a means for propagating and regulating dispersion at the base of the funnel (not depicted). The funnel <b>110</b> is rigidly affixed to the frame <b>120</b> and is disposed to accept and hold constituents for dispersal, such as seed and fertilizer. The frame <b>120</b> provides a means for connecting the broadcast spreader <b>100</b> to a tractor (not depicted) via a standard configuration of three connection points well known in the art, or three-point hitch connection system. Two of the connection points on the broadcast spreader <b>100</b> are provided by outwardly opposed protrusions <b>121</b>, <b>122</b> attached to and rotatably engaged with lower ends <b>123</b>, <b>124</b> of the frame <b>120</b>. Holes <b>125</b>, <b>126</b> pass through each of the outwardly opposed protrusions <b>121</b> and <b>122</b> and provide a means for connecting the broadcast spreader <b>100</b> with a tractor (not shown) via the two lower connection points of the tractor's conventional three-point hitch connection system. The third connection point on the broadcast spreader <b>100</b> is established by a bracket <b>127</b>, which is rigidly affixed to the funnel <b>110</b> and a lateral member <b>128</b> of the frame <b>120</b>. The bracket <b>127</b> contains a pair of holes <b>129</b>, which provide a means for connecting the broadcast spreader <b>100</b> with a tractor (not shown) via a third, upper connection point of the conventional three-point hitch connection system.</p>
+<p id="p-0028" num="0027">To use the broadcast spreader <b>100</b>, an operator of a tractor aligns the holes <b>125</b>, <b>126</b>, <b>129</b> with the tractor's three-point hitch and secures the broadcast spreader <b>100</b> to the tractor by one of any number of means known in the art including, for example, with hitch pins. The PTO connection <b>130</b> of the broadcast spreader <b>100</b> is then rotatable engaged with the power take-off of the tractor (not shown) to provide rotary power to broadcast the constituents held in the funnel <b>110</b>, said broadcasting function being controlled with the dispersion control lever <b>140</b> in combination with a means for propagating and regulating dispersion (not shown). The operator then operates the tractor and uses the power take-off function of the tractor to disperse the constituents in the funnel <b>110</b> onto a desired area of earth.</p>
+<p id="p-0029" num="0028">Referring to <figref idref="DRAWINGS">FIG. <b>2</b></figref>, a conventional cultivating implement, disk harrow <b>200</b>, comprises a plurality of disks <b>210</b> and a frame <b>220</b>. The frame further comprises an upper portion <b>230</b> rigidly affixed to a lower portion <b>260</b>. The plurality of disks <b>210</b> is attached to the lower portion <b>260</b> of the frame <b>220</b> by any number of means known in the art including, for example, with a plurality of U-bolts <b>261</b> and brackets <b>262</b>. The upper portion <b>230</b> of the frame <b>220</b> further comprises a rear section <b>235</b> and a front section <b>240</b>. The rear section <b>235</b> of the upper portion <b>230</b> of the frame <b>220</b> is generally rectilinear in shape, rigidly affixed to the lower portion <b>260</b> of the frame <b>220</b>, and positioned in the horizontal plane above the lower portion <b>260</b> of the frame <b>220</b> and the plurality of disks <b>210</b> affixed thereto. The front section <b>240</b> of the upper portion <b>230</b> of the frame <b>220</b> is typically disposed in the vertical plane and in the general form of an upside-down capital &#x201c;Y&#x201d; so as to provide a means for connecting the disk harrow <b>200</b> to a tractor (not depicted) via the tractor's conventional three-point hitch connection system. Two of the connection points on the disk harrow <b>200</b> are provided by outwardly opposed protrusions <b>241</b>, <b>242</b> attached to and rotatably engaged with lower ends <b>243</b>, <b>244</b> of the front section <b>240</b> of the upper portion <b>230</b> of the frame <b>220</b>. Holes <b>245</b>, <b>246</b> (hole <b>245</b> in outwardly opposed protrusion <b>241</b> is obstructed from view in <figref idref="DRAWINGS">FIG. <b>2</b></figref>) pass through each of the outwardly opposed protrusions <b>241</b>, <b>242</b> and provide a means for connecting the disk harrow <b>200</b> with a tractor (not shown) via the two lower connection points of the tractor's conventional three-point hitch connection system. Upper ends <b>247</b>, <b>248</b> of the front section <b>240</b> of the upper portion <b>230</b> of the frame <b>220</b> are disposed in the vertical plane and substantially parallel. Further, upper ends <b>247</b>, <b>248</b> are positioned with a gap (x) between them and have holes <b>249</b>, <b>250</b> to provide a means for connecting the disk harrow <b>200</b> with a tractor (not shown) via a third, upper connection point of the tractor's conventional three-point hitch connection system. A spacing bolt <b>251</b> is used to connect the upper ends <b>247</b>, <b>248</b> to one another and maintain the gap (x). Further, in the conventional disk harrow <b>200</b> depicted in <figref idref="DRAWINGS">FIG. <b>2</b></figref>, the rear section <b>235</b> and front section <b>240</b> of the upper portion <b>230</b> of the frame <b>220</b> are rigidly affixed to one another by linking arms <b>236</b>, <b>237</b>.</p>
+<p id="p-0030" num="0029">To use the disk harrow <b>200</b>, an operator of a tractor aligns the holes <b>245</b>, <b>246</b> of the outwardly opposed protrusions <b>241</b>, <b>242</b> and the holes <b>249</b>, <b>250</b> with the tractor's conventional three point hitch connection system and secures the disk harrow <b>200</b> to the tractor by one of any number of means known in the art including, for example, with hitch pins. The operator then operates the tractor and pulls the plurality of disks <b>210</b> over a desired area of land to be cultivated.</p>
+<p id="p-0031" num="0030">Having described a conventional broadcasting implement and a conventional cultivating implement to which the invention described herein may be applied, the disclosure will now address an exemplary embodiment of the invention. Referring to <figref idref="DRAWINGS">FIGS. <b>3</b>-<b>7</b></figref>, an exemplary embodiment of an apparatus for combining planting implements <b>300</b>&#x2014;more specifically, for combining a conventional broadcasting implement, or broadcast spreader <b>100</b>, with a conventional cultivating implement, or disk harrow <b>200</b>&#x2014;comprises a support frame <b>320</b>, a pair of brackets <b>340</b>, <b>341</b> (it being understood that bracket <b>341</b> is depicted using dotted lines in <figref idref="DRAWINGS">FIG. <b>3</b></figref> because it is located behind the support frame <b>320</b> and thereby blocked from view), and a connection bar <b>350</b>. The support frame <b>320</b> further comprises two substantially vertical members <b>305</b>, <b>310</b>, a lateral member <b>315</b>, a pair of frontward support members <b>320</b>, <b>325</b> and a pair of rearward support members <b>330</b>, <b>335</b>, The support frame <b>320</b> may be fabricated from any suitably strong and rigid material, such as aluminum, stainless steel, any other ferrous or non-ferrous metal, composites (such as carbon fiber or graphite), plastics, or wood.</p>
+<p id="p-0032" num="0031">The substantially vertical members <b>305</b>, <b>310</b> of the support frame <b>320</b> are further comprised of lower ends <b>306</b>, <b>311</b> and upper ends <b>307</b>, <b>312</b>. The lower ends <b>306</b>, <b>311</b> are rigidly affixed to a frame of a cultivating implement. In the exemplary embodiment depicted in <figref idref="DRAWINGS">FIGS. <b>3</b>-<b>7</b></figref> (and referring as needed to <figref idref="DRAWINGS">FIG. <b>2</b></figref>), the cultivating implement is a disk harrow <b>200</b> as depicted in <figref idref="DRAWINGS">FIG. <b>2</b></figref>, and the lower ends <b>306</b>, <b>311</b> of the substantially vertical members <b>305</b>, <b>310</b> of the support frame <b>320</b> are rigidly affixed to a front side <b>270</b> of the rear section <b>235</b> of the upper portion <b>230</b> of the frame <b>220</b> of the disk harrow <b>200</b>. This connection may be accomplished by one of any number of methods known in the art, such as by welding or by the use of fasteners.</p>
+<p id="p-0033" num="0032">The upper ends <b>307</b>, <b>312</b> of the substantially vertical members <b>305</b>, <b>310</b> of the support frame <b>320</b> are rigidly affixed to and connected by lateral member <b>315</b> of the support frame <b>320</b>. This connection may be accomplished by one of any number of methods known in the art, such as by welding or by the use of fasteners. In the embodiment illustrated in <figref idref="DRAWINGS">FIGS. <b>3</b>-<b>7</b></figref>, the substantially vertical members <b>305</b>, <b>310</b> measure about two (2) feet in height, but this height may be adjusted as necessary to achieve the desired results for implement attachment and constituent dispersion, a suitable height being readily determinable by one of skill in the art.</p>
+<p id="p-0034" num="0033">In the exemplary embodiment depicted in <figref idref="DRAWINGS">FIGS. <b>3</b>-<b>7</b></figref>, a pair of rearward support members <b>330</b>, <b>335</b> are incorporated into the support frame <b>320</b> to provide additional lateral support. The rearward support members <b>330</b>, <b>335</b> run diagonally from upper ends <b>307</b>, <b>312</b> of the substantially vertical members <b>305</b>, <b>310</b> of the support frame <b>320</b> to rearward portions <b>271</b>, <b>272</b> of the rear section <b>235</b> of the upper portion <b>230</b> of the frame <b>220</b> of the disk harrow <b>200</b> and are rigidly affixed at either end by one of any number of methods known in the art, such as by welding or by the use of fasteners.</p>
+<p id="p-0035" num="0034">In the exemplary embodiment depicted in <figref idref="DRAWINGS">FIGS. <b>3</b>-<b>7</b></figref>, a pair of frontward support members <b>320</b>, <b>325</b> are incorporated into the support frame <b>320</b> to provide additional lateral support. The frontward support members <b>320</b>, <b>325</b> run diagonally from a forward-facing side <b>316</b> of the lateral member <b>315</b> of the support frame <b>320</b> of the apparatus <b>300</b> to the upper ends <b>247</b>, <b>248</b> of the front section <b>240</b> of the upper portion <b>230</b> of the frame <b>220</b> of the disk harrow <b>200</b>. The frontward support members <b>320</b>, <b>325</b> are rigidly affixed to the lateral member <b>315</b> by one of any number of methods known in the art, such as by welding or by the use of fasteners. The frontward support members <b>320</b>, <b>325</b> are rigidly affixed to and tied into the frame <b>220</b> of the disk harrow <b>200</b> at spacing bolt <b>251</b>. The frontward support members <b>320</b>, <b>325</b> have holes <b>321</b>, <b>326</b> to facilitate this connection. Specifically, the spacing bolt <b>251</b> of the disk harrow <b>200</b> may be removed and then reattached to run through holes <b>321</b>, <b>326</b> in addition to its previous connection points on the frame <b>220</b>. The spacing bolt <b>251</b> of the conventional disk harrow <b>200</b> may need to be replaced with a lengthier spacing bolt to permit this fastener connection, the need for a replacement being readily determinable by a person of skill in the art.</p>
+<p id="p-0036" num="0035">A pair of brackets <b>340</b>, <b>341</b> are rigidly affixed to inside walls <b>308</b>, <b>313</b> of the substantially vertical members <b>305</b>, <b>310</b> of the support frame <b>320</b> such that the brackets <b>340</b>, <b>341</b> are inwardly opposed to one another and positioned approximately halfway in between mid-points of the substantially vertical members <b>305</b>, <b>310</b> and their upper ends <b>307</b>, <b>312</b>. Referring to <figref idref="DRAWINGS">FIG. <b>1</b></figref> as necessary, in the exemplary embodiment described herein, the brackets <b>340</b>, <b>341</b> are disposed to accept the protrusions of a conventional broadcasting implement, such as the outwardly opposed protrusions <b>121</b>, <b>122</b> of broadcast spreader <b>100</b>, which form the two lower connection points of the conventional three-point hitch connection system embodied in conventional broadcasting implements. In the apparatus according to an embodiment of the present disclosure, the brackets <b>340</b>, <b>341</b> are U-shaped, are angled rearwardly, and have pairs of holes <b>342</b>, <b>343</b> in their frontward <b>344</b>, <b>345</b> and rearward <b>346</b>, <b>347</b> faces. These pairs of holes <b>342</b>, <b>343</b> may be aligned with the holes <b>125</b>, <b>126</b> in the outwardly opposed protrusions <b>121</b>, <b>122</b> of the broadcast spreader <b>100</b> to enable the broadcast spreader <b>100</b> to be attached to the support frame <b>320</b> of the apparatus <b>300</b> by one of any number of means well known in the art, such as by hitch pins.</p>
+<p id="p-0037" num="0036">The distance between the inside walls <b>308</b>, <b>313</b> of substantially vertical members <b>305</b>, <b>310</b> of the support frame <b>320</b> (depicted as &#x201c;y&#x201d; in <figref idref="DRAWINGS">FIG. <b>5</b></figref>) is dictated by the distance between the lower connection points of the conventional three-point hitch connection system embodied in the broadcasting implement to be used with the invention. In the exemplary embodiment described herein, the broadcasting implement is a broadcast spreader <b>100</b> as depicted in <figref idref="DRAWINGS">FIG. <b>1</b></figref>, and the distance between the centers of the holes <b>125</b>, <b>126</b> in the outwardly opposed protrusions <b>121</b>, <b>122</b> of the broadcast spreader <b>100</b> dictates and specifies the distance between the centers of the pairs of holes <b>342</b>, <b>343</b> in the brackets <b>340</b>, <b>341</b> of the apparatus <b>300</b>, which in turn dictates the distance (y) between the inside walls <b>308</b>, <b>313</b> of substantially vertical members <b>305</b>, <b>310</b>. The distance between the centers of the holes <b>125</b>, <b>126</b> should be roughly the same as the distance between the centers of the pairs of holes <b>342</b>, <b>343</b> in the brackets <b>340</b>, <b>341</b>. In the exemplary embodiment depicted in <figref idref="DRAWINGS">FIGS. <b>3</b>-<b>7</b></figref>, this distance coincides with positioning the lower ends <b>306</b>, <b>311</b> of the substantially vertical members <b>305</b>, <b>310</b> of the support frame <b>320</b> of the apparatus <b>300</b> at front side corners <b>273</b>, <b>274</b> of the front side <b>270</b> of the rear section <b>235</b> of the upper portion <b>230</b> of the frame <b>220</b> of the disk harrow <b>200</b>, but one of skill in the art would be able to readily determine a proper location to affix the lower ends <b>306</b>, <b>311</b> of the substantially vertical members <b>305</b>, <b>310</b> of the support frame <b>320</b> of the apparatus <b>300</b> to a variety of cultivating implements based on the disclosure herein and the dimensions of the three-point hitch connection system in the broadcasting implement to be used in combination with a particular cultivating implement. Further, in the event that the frame of the cultivating implement is too narrow to permit the substantially vertical members <b>305</b>, <b>310</b> to be affixed to it and spaced apart from one another at a distance sufficient to enable a broadcasting implement to be attached to the apparatus, one of skill in the art would be able to modify the frame of the cultivating implement (such as by extending its width laterally) as necessary to permit the objects of the present invention to be accomplished.</p>
+<p id="p-0038" num="0037">It may be necessary to cut out a portion of the frame of the cultivating implement to enable the PTO connection of the broadcasting implement to be connected with the tractor's PTO when the invention described herein is used to combine a cultivating implement and a broadcasting implement to enable their simultaneous operation. In <figref idref="DRAWINGS">FIG. <b>7</b></figref>, cutout portion <b>275</b> of the frame <b>220</b> of the disk harrow <b>200</b> enables the PTO connection <b>130</b> of the broadcast spreader <b>100</b> to be connected with the tractor's PTO when the apparatus <b>300</b> is used to combine the broadcast spreader <b>100</b> with the disk harrow <b>200</b>.</p>
+<p id="p-0039" num="0038">A connection bar <b>350</b> is rigidly affixed to lateral member <b>315</b> at roughly the mid-point of lateral member <b>315</b>. A lower portion <b>351</b> of connection bar <b>350</b> is rigidly affixed to lateral member <b>315</b>, and connection bar <b>350</b> runs upwardly and vertically therefrom. An upper portion <b>352</b> of connection bar <b>350</b> has a pair of holes <b>353</b> disposed in its sides. Referring to <figref idref="DRAWINGS">FIG. <b>1</b></figref> as necessary, in the exemplary embodiment described herein, the pair of holes <b>353</b> are disposed to align with a pair of holes of a conventional broadcasting implement, such as the pair of holes <b>129</b> in the bracket <b>127</b> of broadcast spreader <b>100</b>, which form the upper connection point of the conventional three-point hitch connection system embodied in broadcast spreader <b>100</b>. In the apparatus according to an embodiment of the present disclosure, the pair of holes <b>353</b> is aligned with the pair of holes <b>129</b> in the bracket <b>127</b> of broadcast spreader <b>100</b> to enable the broadcast spreader <b>100</b> to be attached to the support frame <b>320</b> of the apparatus <b>300</b> by one of any number of means well known in the art, such as by a hitch pin. Further, in the apparatus according to an embodiment of the present disclosure, the width of the connection bar <b>350</b> (measured from its frontward-facing side to its rearward facing side) is greater than the width of the lateral member <b>315</b>, such that a frontward portion <b>354</b> of the connection bar <b>350</b> extends down in front of the lateral member <b>315</b> to provide an additional anchor point for one or more of the frontward support members <b>320</b>, <b>325</b>.</p>
+<p id="p-0040" num="0039">The height of the connection bar <b>350</b> (as depicted as &#x201c;h&#x201d; in <figref idref="DRAWINGS">FIG. <b>4</b></figref>) is dictated by the spatial orientation of the connection points of the conventional three-point hitch connection system embodied in the broadcasting implement to be connected to the support frame <b>320</b>; specifically, the distance between the upper connection point and the mid-point between the lower connection points. In the exemplary embodiment described herein, the broadcasting implement is a broadcast spreader <b>100</b> as depicted in <figref idref="DRAWINGS">FIG. <b>1</b></figref>, and the distance between the midpoint of a line connecting the pair of holes <b>129</b> in the bracket <b>127</b> of the broadcast spreader <b>100</b> and the midpoint of a line connecting the two lower connection points (established by the holes <b>125</b>, <b>126</b> in the outwardly opposed protrusions <b>121</b>, <b>122</b>) dictates and specifies the distance between and the orientation of the pair of holes <b>353</b> in the connection bar <b>350</b> of the apparatus <b>300</b> and the pairs of holes <b>342</b>, <b>343</b> in the brackets <b>340</b>, <b>341</b>. Accordingly, one of skill in the art would be able to readily determine a proper height for the connection bar <b>350</b> for a variety of applications and combinations based on the disclosure herein and the dimensions of the three-point hitch connection system in the broadcasting implement to be used in combination with a particular cultivating implement.</p>
+<p id="p-0041" num="0040">In an alternative embodiment of the invention disclosed herein, the connection bar <b>350</b> may contain a plurality of pairs of holes at varying heights, or may otherwise be adjustable vertically, to provide multiple connection options. Likewise the substantially vertical support members <b>305</b>, <b>310</b> may contain a plurality of attachment points for brackets <b>340</b>, <b>341</b>, or may otherwise be adjustable vertically, to provide multiple connection options. These adjustable variations could be readily incorporated into the exemplary embodiment described herein by a person of skill in the art.</p>
+<p id="p-0042" num="0041">Finally, <figref idref="DRAWINGS">FIG. <b>8</b></figref> depicts an exemplary embodiment of an apparatus for combining planting implements <b>300</b> being used to connect the broadcast spreader <b>100</b> of <figref idref="DRAWINGS">FIG. <b>1</b></figref> and the disk harrow <b>200</b> of <figref idref="DRAWINGS">FIG. <b>2</b></figref>. The outwardly opposed protrusions <b>121</b>, <b>122</b> of the broadcast spreader <b>100</b> are positioned in the brackets <b>340</b>, <b>341</b> of the apparatus <b>300</b> and connected to the brackets <b>340</b>, <b>341</b> by running hitch pins <b>400</b>, <b>401</b> through the holes <b>125</b>, <b>126</b> (not shown) in the outwardly opposed protrusions <b>121</b>, <b>122</b> of the broadcast spreader <b>100</b> and the pairs of holes <b>342</b>, <b>343</b> (not shown) in the brackets <b>340</b>, <b>341</b> of the apparatus <b>300</b>. Likewise, the pair of holes <b>129</b> (not shown) in the bracket <b>127</b> of the broadcast spreader <b>100</b> are aligned with the pair of holes <b>353</b> (not shown) in the upper portion <b>352</b> of the connection bar <b>350</b> of the apparatus <b>300</b> and a hitch pin <b>402</b> is placed through the holes and engaged to further secure the broadcast spreader <b>100</b> to the apparatus <b>300</b>. The apparatus <b>300</b>, in turn, is rigidly affixed to a disk harrow <b>200</b> as shown and described in <figref idref="DRAWINGS">FIGS. <b>5</b> and <b>7</b></figref>. All three of the connection points on the disk harrow <b>200</b>, including holes <b>245</b>, <b>246</b> in the outwardly opposed protrusions <b>241</b>, <b>242</b> and holes <b>249</b>, <b>250</b> (not shown) remain available to provide a means for connecting the disk harrow <b>200</b> to a tractor (not shown) through a tractor's conventional three-point hitch connection system. Likewise, the PTO connection <b>130</b> of the broadcast spreader <b>100</b> is available to connect to the tractor's PTO. Thus, the exemplary embodiment of an apparatus for combining planting implements <b>300</b> enables an operator of a tractor to use multiple conventional planting implements, such as a cultivating implement and a broadcasting implement, simultaneously. The resulting positioning of the broadcasting implement with respect to the cultivating implement leaves at least a portion of the cultivating implement disposed behind the broadcasting implement, thereby permitting cultivating and constituent broadcasting to be performed simultaneously.</p>
+<?DETDESC description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is:</us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text>1. An apparatus for combining planting implements comprising:
+<claim-text>a support frame, the support frame comprising a pair of substantially vertical members and a lateral member, the lateral member rigidly affixed to upper ends of the substantially vertical members;</claim-text>
+<claim-text>a pair of opposed brackets, each bracket attached to one of the substantially vertical members;</claim-text>
+<claim-text>a connection bar rigidly affixed to the lateral member, wherein the brackets and connection bar are configured to receive a three-point hitch connection from a first implement behind said support frame;</claim-text>
+<claim-text>a three-point hitch connection configured to attach to a three-point hitch of a tractor in front of said support frame; and</claim-text>
+<claim-text>a first lateral support member, said first lateral support member selected from the group consisting of: a rearward support member rigidly affixed to and running rearward and downward from the upper end of one of said pair of substantially vertical members and a frontward support member rigidly affixed to and running forward and downward from said lateral member.</claim-text>
+</claim-text>
+</claim>
+<claim id="CLM-00002" num="00002">
+<claim-text>2. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising:
+<claim-text>a second implement comprising a cultivating implement, wherein said support frame and said first lateral support member are rigidly affixed to said cultivating implement.</claim-text>
+</claim-text>
+</claim>
+<claim id="CLM-00003" num="00003">
+<claim-text>3. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said pair of opposed brackets are attached to respective inside surfaces of said substantially vertical members.</claim-text>
+</claim>
+<claim id="CLM-00004" num="00004">
+<claim-text>4. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said connection bar is rigidly affixed to an upper surface of said lateral member.</claim-text>
+</claim>
+<claim id="CLM-00005" num="00005">
+<claim-text>5. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said connection bar extends upwardly from said lateral member.</claim-text>
+</claim>
+<claim id="CLM-00006" num="00006">
+<claim-text>6. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein said pair of substantially vertical members have a plurality of locations for attaching said pair of brackets.</claim-text>
+</claim>
+<claim id="CLM-00007" num="00007">
+<claim-text>7. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising a second lateral support member that is a rearward support member.</claim-text>
+</claim>
+<claim id="CLM-00008" num="00008">
+<claim-text>8. The apparatus of <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein said first lateral support member is a rearward support member, and wherein said second lateral support member runs diagonally from said upper end of one of said pair of substantially vertical members.</claim-text>
+</claim>
+<claim id="CLM-00009" num="00009">
+<claim-text>9. The apparatus of <claim-ref idref="CLM-00001">claim 1</claim-ref> further comprising a second lateral support member that is a frontward support member.</claim-text>
+</claim>
+<claim id="CLM-00010" num="00010">
+<claim-text>10. The apparatus of <claim-ref idref="CLM-00009">claim 9</claim-ref>, wherein said first lateral support member is a frontward support member, and wherein said second lateral support member runs diagonally from said lateral member.</claim-text>
+</claim>
+<claim id="CLM-00011" num="00011">
+<claim-text>11. An apparatus for combining planting implements comprising:
+<claim-text>a first implement comprising a cultivating implement having a first three-point hitch connection;</claim-text>
+<claim-text>a support frame comprising a first substantially vertical member rigidly affixed to said cultivating implement, a second substantially vertical member rigidly affixed to said cultivating implement, and a lateral member rigidly affixed to the upper end of each substantially vertical member;</claim-text>
+<claim-text>a first and second lateral support member, each lateral support member rigidly affixed at one end to an upper portion of said support frame and rigidly affixed at the other end to said cultivating implement;</claim-text>
+<claim-text>a first bracket attached to said first substantially vertical member;</claim-text>
+<claim-text>a second bracket attached to said second substantially vertical member; and</claim-text>
+<claim-text>a connection bar rigidly affixed to said lateral member,</claim-text>
+<claim-text>wherein said first bracket, said second bracket, and said connection bar are configured to receive a three-point hitch connection from a second implement behind said support frame.</claim-text>
+</claim-text>
+</claim>
+<claim id="CLM-00012" num="00012">
+<claim-text>12. The apparatus of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein both lateral support members run downward and forward from said support frame or both lateral support members run downward and rearward from said support frame.</claim-text>
+</claim>
+<claim id="CLM-00013" num="00013">
+<claim-text>13. The apparatus of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein said first and second lateral support members are rigidly affixed to said first and second substantially vertical members.</claim-text>
+</claim>
+<claim id="CLM-00014" num="00014">
+<claim-text>14. The apparatus of <claim-ref idref="CLM-00011">claim 11</claim-ref>, wherein said first and second lateral support members are rigidly affixed to said lateral member.</claim-text>
+</claim>
+<claim id="CLM-00015" num="00015">
+<claim-text>15. A support frame for connecting to an implement comprising:
+<claim-text>a pair of substantially vertical members and a lateral member, the lateral member rigidly affixed to upper ends of the substantially vertical members;</claim-text>
+<claim-text>a pair of opposed brackets, each bracket attached to one of the substantially vertical members;</claim-text>
+<claim-text>a connection bar rigidly affixed to the lateral member, wherein the brackets and connection bar are configured to receive a three-point hitch connection from a first implement behind said pair of substantially vertical members;</claim-text>
+<claim-text>a three-point hitch connection configured to attach to a three-point hitch of a tractor in front of said pair of substantially vertical members; and</claim-text>
+<claim-text>a first lateral support member, said first lateral support member selected from the group consisting of: a rearward support member rigidly affixed to and running rearward and downward from the upper end of one of said pair of substantially vertical members and a frontward support member rigidly affixed to and running forward and downward from said lateral member.</claim-text>
+</claim-text>
+</claim>
+<claim id="CLM-00016" num="00016">
+<claim-text>16. The support frame of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein a second implement comprising a cultivating implement is rigidly affixed to said pair of substantially vertical members and said first lateral support member.</claim-text>
+</claim>
+<claim id="CLM-00017" num="00017">
+<claim-text>17. The apparatus of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein said pair of opposed brackets are attached to respective inside surfaces of said substantially vertical members.</claim-text>
+</claim>
+<claim id="CLM-00018" num="00018">
+<claim-text>18. The apparatus of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein said connection bar is rigidly affixed to an upper surface of said lateral member.</claim-text>
+</claim>
+<claim id="CLM-00019" num="00019">
+<claim-text>19. The apparatus of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein said connection bar extends upwardly from said lateral member.</claim-text>
+</claim>
+<claim id="CLM-00020" num="00020">
+<claim-text>20. The apparatus of <claim-ref idref="CLM-00015">claim 15</claim-ref>, wherein said pair of substantially vertical members have a plurality of locations for attaching said pair of brackets.</claim-text>
+</claim>
+</claims>
+</us-patent-grant>
