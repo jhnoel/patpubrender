@@ -1,1 +1,7 @@
-/target
+# Build artifacts (root crate and the python/ binding crate)
+target/
+
+# Python
+*.whl
+__pycache__/
+.venv/

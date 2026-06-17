@@ -35,11 +35,13 @@ the title, abstract, claims, and description.
 Override the default layout with a section-placeholder template — plain text
 with `{{placeholder}}` tokens. The placeholders are `frontmatter`, `title`,
 `abstract`, `description`, `claims`, and `body` (abstract + description + claims
-in source order). Each section is still rendered internally; the template only
-controls order and surrounding text. No expression language, no dependency.
+in source order). Each placeholder expands to a **fully-rendered block** — e.g.
+`{{title}}` already includes the `# ` heading and `{{abstract}}` its `## Abstract`
+heading — so the template only controls order and surrounding text. No expression
+language, no dependency.
 
 ```rust
-let tmpl = "# {{title}}\n\n> Source: USPTO\n\n{{claims}}\n\n{{frontmatter}}";
+let tmpl = "{{title}}\n\n> Source: USPTO\n\n{{claims}}\n\n{{frontmatter}}";
 let md = patpubrender::render_markdown_with_template(&doc, tmpl)?;
 ```
 

@@ -11,6 +11,7 @@
 //!   shards. Implies `shard`; pulls in `zip` + `rayon`.
 
 pub mod error;
+pub mod extract;
 mod json;
 pub mod model;
 pub mod render;

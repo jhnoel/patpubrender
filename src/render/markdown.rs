@@ -330,7 +330,7 @@ fn flatten_runs(runs: &[Run]) -> String {
     output
 }
 
-fn flatten_runs_plain(runs: &[Run]) -> String {
+pub(crate) fn flatten_runs_plain(runs: &[Run]) -> String {
     let mut output = String::new();
     for run in runs {
         match run {

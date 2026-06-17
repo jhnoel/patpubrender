@@ -1,0 +1,22 @@
+[package]
+name = "patpubrender-py"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "Apache-2.0"
+description = "Python bindings for patpubrender — USPTO patent XML to Markdown."
+publish = false
+
+# Own workspace root so `cargo`/maturin here never tries to join the core crate
+# one level up as a workspace member.
+[workspace]
+
+[lib]
+name = "patpubrender"
+crate-type = ["cdylib"]
+
+# Aliased so the `#[pymodule] fn patpubrender` (which must match the lib name)
+# doesn't collide with the dependency crate's name.
+[dependencies]
+ppr = { package = "patpubrender", path = ".." }
+pyo3 = { version = "0.23", features = ["abi3-py39", "extension-module"] }
