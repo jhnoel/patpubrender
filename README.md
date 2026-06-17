@@ -7,11 +7,10 @@ addressable, compressed **shard** archive.
 
 The crate is layered so you only pay for what you use:
 
-| Tier | Cargo feature | Adds | Pulls in |
-|------|---------------|------|----------|
-| Renderer | *(default)* | parse + model + Markdown render | `xmloxide` |
-| Shard codec | `shard` | write/read the `.zst` + `.idx` archive format | `zstd` |
-| Bulk ingest | `ingest` | render whole USPTO weekly ZIPs into shards | `zip`, `rayon` (implies `shard`) |
+| Cargo feature | Adds | Pulls in |
+|---------------|------|----------|
+| *(default)* | parse + model + Markdown render | `xmloxide` |
+| `shard` | the `.zst`/`.idx` archive — write/read codec **and** bulk USPTO weekly-ZIP ingest | `zstd`, `zip`, `rayon` |
 
 ## Library
 
@@ -46,21 +45,19 @@ let md = patpubrender::render_markdown_with_template(&doc, tmpl)?;
 
 From the CLI: `patpubrender render US123.xml --template my.md`.
 
-### Shard codec (`--features shard`)
+### Shards (`--features shard`)
 
 A shard is a pair of files: `<stem>.zst` holds one independent zstd frame per
 document (frame independence is what enables random access), and `<stem>.idx` is
-a TSV of `doc_key⇥offset⇥length` rows. Write and read live together in
-`patpubrender::shard` so the on-disk format has a single owner.
+a TSV of `doc_key⇥offset⇥length` rows. Everything shard-related lives in one
+module, `patpubrender::shard` — the write/read codec and bulk ingest:
 
 ```rust
 use patpubrender::shard::{ShardWriter, ShardReader, parse_shard_index};
+
+// Render a USPTO weekly bulk ZIP into a shard + .biblio.jsonl + .manifest.json:
+patpubrender::shard::render_shard_from_zip("ipg260101.zip", "out/", None)?;
 ```
-
-### Bulk ingest (`--features ingest`)
-
-`patpubrender::ingest::render_shard_from_zip` renders a USPTO weekly bulk ZIP
-into a shard plus a `.biblio.jsonl` sidecar and a `.manifest.json`.
 
 ## CLI
 
@@ -73,13 +70,11 @@ patpubrender render [INPUT] [--output OUT] [--template FILE]
                    {{description}}/{{claims}} placeholders
 
 patpubrender shard write (--zip ZIP | --dir DIR_OF_ZIPS) [--output DIR] [--limit N] [--jobs N]
-    (requires --features ingest)
-
 patpubrender shard read --shard FILE.zst (--key KEY | --offset N --length L) [--index FILE.idx] [--output OUT]
-    (requires --features shard; --index defaults to <shard-stem>.idx)
+    (both require --features shard; read's --index defaults to <shard-stem>.idx)
 ```
 
-Install the full CLI with `cargo install patpubrender --features ingest`.
+Install the full CLI with `cargo install patpubrender --features shard`.
 
 When a directory is rendered to stdout, documents are separated by four newlines
 (`\n\n\n\n`) — an unambiguous record boundary, since the renderer never emits

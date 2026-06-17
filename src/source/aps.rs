@@ -658,7 +658,7 @@ impl WkuNumber {
 /// The clean, display patent number for a WKU (kind prefix retained for
 /// design/reissue/plant; bare digits for utility), e.g. `043757022` ->
 /// `4375702`, `D02681420` -> `D268142`. Used as the shard `doc_key`.
-#[cfg_attr(not(feature = "ingest"), allow(dead_code))]
+#[cfg_attr(not(feature = "shard"), allow(dead_code))]
 pub fn aps_doc_key_from_wku(wku: &str) -> String {
     WkuNumber::parse(wku).doc_number
 }

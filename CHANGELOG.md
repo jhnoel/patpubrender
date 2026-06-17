@@ -17,7 +17,7 @@ Initial release.
   `{{abstract}}`, `{{description}}`, `{{claims}}`).
 - Structured field extraction (`extract::claims`, `extract::abstract_text`,
   `render::biblio::extract_biblio`).
-- Optional `shard` feature: the `.zst` + `.idx` codec (write and read).
-- Optional `ingest` feature: bulk USPTO weekly-ZIP rendering into shards.
+- Optional `shard` feature: the `.zst` + `.idx` archive — write/read codec and
+  bulk USPTO weekly-ZIP ingest, all under `patpubrender::shard`.
 - `patpubrender` CLI: `render`, `shard write`, `shard read`.
 - Python SDK (PyPI) with structured `Document` access and `to_markdown`.

@@ -4,11 +4,9 @@
 //! Green Book "APS" plain text) into the canonical [`PatentDocument`] model, and
 //! render it to Markdown. It depends only on `xmloxide`.
 //!
-//! Two optional tiers extend it:
-//! - feature `shard` — [`shard`], the addressable zstd archive codec (write
-//!   frames + index, read a frame back by pointer). Pulls in `zstd`.
-//! - feature `ingest` — [`ingest`], bulk rendering of USPTO weekly ZIPs into
-//!   shards. Implies `shard`; pulls in `zip` + `rayon`.
+//! The optional `shard` feature adds [`shard`]: the addressable `.zst`/`.idx`
+//! archive codec (write + read) and bulk rendering of USPTO weekly ZIPs into
+//! shards. It pulls in `zstd`, `zip`, and `rayon`.
 
 pub mod error;
 pub mod extract;
@@ -19,9 +17,6 @@ mod source;
 
 #[cfg(feature = "shard")]
 pub mod shard;
-
-#[cfg(feature = "ingest")]
-pub mod ingest;
 
 use error::{ParseError, SerializeError};
 use model::document::PatentDocument;

@@ -1,18 +1,17 @@
-//! Bulk ingest — render a USPTO weekly bulk ZIP into a [`shard`](crate::shard)
-//! plus a `.biblio.jsonl` sidecar and a `.manifest.json`.
+//! Bulk ingest — render a USPTO weekly bulk ZIP into a shard plus a
+//! `.biblio.jsonl` sidecar and a `.manifest.json`.
 //!
-//! This is the pipeline tier: it reads the weekly ZIP, splits it into per-doc
-//! records, parses + renders each, and hands the Markdown to a
-//! [`ShardWriter`](crate::shard::ShardWriter). The frame/index format itself is
-//! owned by [`crate::shard`]; this module only drives it.
+//! It reads the weekly ZIP, splits it into per-doc records, parses + renders
+//! each, and hands the Markdown to a [`ShardWriter`](super::ShardWriter). The
+//! frame/index format itself is owned by the codec; this only drives it.
 
 use std::fs;
 use std::io::{Read, Write};
 use std::path::{Path, PathBuf};
 
+use super::ShardWriter;
 use crate::error::{DetectError, ParseError};
 use crate::json::json_string;
-use crate::shard::ShardWriter;
 
 #[derive(Debug)]
 pub struct ShardStats {

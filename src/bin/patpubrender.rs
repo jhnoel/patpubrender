@@ -2,7 +2,7 @@
 //!
 //! Verbs:
 //!   render [INPUT] [--output OUT]                 (always)
-//!   shard write (--zip Z | --dir D) [--output D] [--limit N] [--jobs N]   (feature "ingest")
+//!   shard write (--zip Z | --dir D) [--output D] [--limit N] [--jobs N]   (feature "shard")
 //!   shard read --shard F.zst (--key K | --offset N --length L) [--index F] [--output OUT]  (feature "shard")
 
 use std::fs;
@@ -35,7 +35,7 @@ fn usage_exit() -> ! {
     eprintln!(
         "  patpubrender shard write (--zip <zip> | --dir <dir>) [--output <dir>] [--limit <n>] [--jobs <n>]"
     );
-    eprintln!("      (requires the `ingest` feature)");
+    eprintln!("      (requires the `shard` feature)");
     eprintln!(
         "  patpubrender shard read --shard <file.zst> (--key <k> | --offset <n> --length <l>) [--index <file.idx>] [--output <path>]"
     );
@@ -229,12 +229,12 @@ fn run_shard(args: &[String]) {
     }
 }
 
-#[cfg(not(feature = "ingest"))]
+#[cfg(not(feature = "shard"))]
 fn shard_write(_args: &[String]) -> ! {
-    fail("`shard write` requires the `ingest` feature (rebuild with --features ingest)");
+    fail("`shard write` requires the `shard` feature (rebuild with --features shard)");
 }
 
-#[cfg(feature = "ingest")]
+#[cfg(feature = "shard")]
 fn shard_write(args: &[String]) {
     let mut zip: Option<String> = None;
     let mut dir: Option<String> = None;
@@ -280,9 +280,9 @@ fn shard_write(args: &[String]) {
     }
 }
 
-#[cfg(feature = "ingest")]
+#[cfg(feature = "shard")]
 fn write_one_shard(zip: &str, out_dir: &str, limit: Option<usize>) {
-    match patpubrender::ingest::render_shard_from_zip(zip, out_dir, limit) {
+    match patpubrender::shard::render_shard_from_zip(zip, out_dir, limit) {
         Ok(stats) => eprintln!(
             "shard write: {} written, {} supplemental, {} unsupported (fixable), {} malformed -> {} + {}",
             stats.docs_written,
@@ -296,7 +296,7 @@ fn write_one_shard(zip: &str, out_dir: &str, limit: Option<usize>) {
     }
 }
 
-#[cfg(feature = "ingest")]
+#[cfg(feature = "shard")]
 fn write_many_shards(input_dir: &str, out_dir: &str, limit: Option<usize>, jobs: Option<usize>) {
     use rayon::prelude::*;
 
@@ -319,7 +319,7 @@ fn write_many_shards(input_dir: &str, out_dir: &str, limit: Option<usize>, jobs:
     eprintln!("shard write: {total} zip(s) -> {out_dir}");
     let result: Result<(), String> = zips.par_iter().try_for_each(|zip| {
         let zip_str = zip.to_string_lossy();
-        let stats = patpubrender::ingest::render_shard_from_zip(&zip_str, out_dir, limit)
+        let stats = patpubrender::shard::render_shard_from_zip(&zip_str, out_dir, limit)
             .map_err(|e| format!("{zip_str}: {e}"))?;
         eprintln!(
             "  {} -> {} written, {} supplemental",
@@ -335,7 +335,7 @@ fn write_many_shards(input_dir: &str, out_dir: &str, limit: Option<usize>, jobs:
     eprintln!("shard write: done ({total} zips).");
 }
 
-#[cfg(feature = "ingest")]
+#[cfg(feature = "shard")]
 fn collect_zips(dir: &Path, out: &mut Vec<PathBuf>) -> io::Result<()> {
     for entry in fs::read_dir(dir)? {
         let path = entry?.path();

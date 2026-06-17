@@ -16,13 +16,11 @@ name = "patpubrender"
 path = "src/bin/patpubrender.rs"
 
 [features]
-# tier 1 (default): parse + model + Markdown render — depends only on xmloxide.
+# Default: parse + model + Markdown render — depends only on xmloxide.
 default = []
-# tier 2: the shard codec (write frames + idx, read a frame back by pointer).
-# Write and read live together so the on-disk format has a single owner.
-shard = ["dep:zstd"]
-# tier 3: bulk ingest of USPTO weekly ZIPs into shards (implies the codec).
-ingest = ["shard", "dep:zip", "dep:rayon"]
+# Shards: the .zst/.idx codec (write + read, one format owner) and bulk ingest
+# of USPTO weekly ZIPs into shards. One surface — `patpubrender::shard`.
+shard = ["dep:zstd", "dep:zip", "dep:rayon"]
 
 [dependencies]
 xmloxide = "0.4.1"
