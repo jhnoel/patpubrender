@@ -1,4 +1,7 @@
 [toolchain]
-# Edition 2024 requires Rust 1.85 or newer (also the MSRV floor in Cargo.toml).
-channel = "stable"
+# Pinned so local development and CI run the exact same clippy/rustfmt — no
+# version drift (see the matching dtolnay/rust-toolchain refs under
+# .github/workflows/). Bump this and those refs together. The MSRV floor for
+# consumers is separate: rust-version in Cargo.toml (1.85).
+channel = "1.96.0"
 components = ["rustfmt", "clippy"]

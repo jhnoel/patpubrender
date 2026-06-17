@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@1.96.0
       - run: cargo publish --token "${{ secrets.CARGO_REGISTRY_TOKEN }}"
 
   # Create the GitHub release that the CLI binaries attach to.
