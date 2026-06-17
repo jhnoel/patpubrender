@@ -1,12 +1,11 @@
-//! USPTO patent document parsing and compact Markdown rendering.
+//! Render USPTO patent documents as Markdown.
 //!
-//! The default build is the renderer: parse USPTO grant/application XML (and
-//! Green Book "APS" plain text) into the canonical [`PatentDocument`] model, and
-//! render it to Markdown. It depends only on `xmloxide`.
+//! Parse patent grant and application XML, and the legacy Green Book "APS" text
+//! format, into the [`PatentDocument`] model, then render Markdown with
+//! [`render_markdown`]. The default build depends only on `xmloxide`.
 //!
-//! The optional `shard` feature adds [`shard`]: the addressable `.zst`/`.idx`
-//! archive codec (write + read) and bulk rendering of USPTO weekly ZIPs into
-//! shards. It pulls in `zstd`, `zip`, and `rayon`.
+//! The `shard` feature adds [`shard`]: the `.zst`/`.idx` archive codec and bulk
+//! ingest of USPTO weekly ZIPs. It pulls in `zstd`, `zip`, and `rayon`.
 
 pub mod error;
 pub mod extract;

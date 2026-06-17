@@ -1,16 +1,19 @@
 # patpubrender
 
-Parse USPTO patent **grant** and **application** XML — plus legacy Green Book
-"APS" plain text — into a canonical document model, and render compact,
-front-mattered **Markdown**. Optionally pack rendered documents into an
-addressable, compressed **shard** archive.
+patpubrender — render USPTO patent documents as Markdown.
 
-The crate is layered so you only pay for what you use:
+It parses patent grant and application XML, and the legacy Green Book "APS"
+text format, into one document model, then renders Markdown under a YAML
+frontmatter header. Rendered documents may be packed into a compressed,
+randomly addressable archive.
 
-| Cargo feature | Adds | Pulls in |
-|---------------|------|----------|
-| *(default)* | parse + model + Markdown render | `xmloxide` |
-| `shard` | the `.zst`/`.idx` archive — write/read codec **and** bulk USPTO weekly-ZIP ingest | `zstd`, `zip`, `rayon` |
+The library requires only an XML reader. Archive support is a feature.
+
+```
+    feature     adds                                          dependencies
+    (default)   parse, model, Markdown render                 xmloxide
+    shard       .zst/.idx archive: codec and bulk ZIP ingest  zstd, zip, rayon
+```
 
 ## Library
 
@@ -21,84 +24,77 @@ patpubrender = "0.1"
 
 ```rust
 let xml = std::fs::read_to_string("US12345678.xml")?;
-let doc = patpubrender::parse_patent_xml(&xml)?;     // auto-detects schema version
-let markdown = patpubrender::render_markdown(&doc);
+let doc = patpubrender::parse_patent_xml(&xml)?;   // schema version detected
+let md  = patpubrender::render_markdown(&doc);
 ```
 
-Each rendered document begins with a YAML frontmatter block (publication/patent
-numbers, dates, application number, classifications, priority chain) followed by
-the title, abstract, claims, and description.
+A rendered document opens with a YAML frontmatter block — publication and
+patent numbers, dates, application number, classifications, priority chain —
+then the title, abstract, claims, and description.
 
-### Custom templates
+## Templates
 
-Override the default layout with a section-placeholder template — plain text
-with `{{placeholder}}` tokens. The placeholders are `frontmatter`, `title`,
-`abstract`, `description`, and `claims`. Each placeholder expands to a
-**fully-rendered block** — e.g. `{{title}}` already includes the `# ` heading and
-`{{abstract}}` its `## Abstract` heading — so the template only controls order and
-surrounding text. No expression language, no dependency.
+The layout is a template: text with `{{...}}` placeholders, namely
+`frontmatter`, `title`, `abstract`, `description`, and `claims`. Each expands
+to a complete block, heading included: `{{title}}` carries its own `#`,
+`{{abstract}}` its `## Abstract`. A template fixes order and surrounding text.
+It has no expressions and adds no dependency.
 
 ```rust
-let tmpl = "{{title}}\n\n> Source: USPTO\n\n{{claims}}\n\n{{frontmatter}}";
+let tmpl = "{{title}}\n\n{{claims}}\n\n{{frontmatter}}";
 let md = patpubrender::render_markdown_with_template(&doc, tmpl)?;
 ```
 
-From the CLI: `patpubrender render US123.xml --template my.md`.
+## Shards
 
-### Shards (`--features shard`)
-
-A shard is a pair of files: `<stem>.zst` holds one independent zstd frame per
-document (frame independence is what enables random access), and `<stem>.idx` is
-a TSV of `doc_key⇥offset⇥length` rows. Everything shard-related lives in one
-module, `patpubrender::shard` — the write/read codec and bulk ingest:
+A shard is two files. `<stem>.zst` holds one independent zstd frame per
+document; independence is what permits random access. `<stem>.idx` is a table
+of `doc_key`, `offset`, `length`, tab-separated, one row per frame. The
+`patpubrender::shard` module owns both the codec and bulk ingest.
 
 ```rust
 use patpubrender::shard::{ShardWriter, ShardReader, parse_shard_index};
 
-// Render a USPTO weekly bulk ZIP into a shard + .biblio.jsonl + .manifest.json:
+// weekly bulk ZIP -> shard, .biblio.jsonl sidecar, .manifest.json
 patpubrender::shard::render_shard_from_zip("ipg260101.zip", "out/", None)?;
 ```
 
-## CLI
+Requires `--features shard`.
+
+## Command line
 
 ```
 patpubrender render [INPUT] [--output OUT] [--template FILE]
-    INPUT: a file, a directory, or - / omitted for stdin
-    file / stdin → stdout (or --output FILE)
-    directory    → all docs concatenated to stdout, or one .md per file into --output DIR
-    --template   → a .md template with {{frontmatter}}/{{title}}/{{abstract}}/
-                   {{description}}/{{claims}} placeholders
-
-patpubrender shard write (--zip ZIP | --dir DIR_OF_ZIPS) [--output DIR] [--limit N] [--jobs N]
-patpubrender shard read --shard FILE.zst (--key KEY | --offset N --length L) [--index FILE.idx] [--output OUT]
-    (both require --features shard; read's --index defaults to <shard-stem>.idx)
+patpubrender shard write (--zip ZIP | --dir DIR) [--output DIR] [--limit N] [--jobs N]
+patpubrender shard read  --shard FILE.zst (--key KEY | --offset N --length L) [--index FILE]
 ```
 
-Install the full CLI with `cargo install patpubrender --features shard`.
+`render` reads INPUT — a file, a directory, or `-` for standard input, which
+is the default. A file or standard input renders to standard output, or to
+`--output`. A directory renders every `*.xml` file: concatenated to standard
+output, or one `.md` per file under `--output`. Concatenated documents are
+separated by four newlines; the renderer never emits that sequence within a
+document, so it is an unambiguous boundary.
 
-When a directory is rendered to stdout, documents are separated by four newlines
-(`\n\n\n\n`) — an unambiguous record boundary, since the renderer never emits
-that sequence inside a document.
+The `shard` subcommands require `--features shard`. `read` derives `--index`
+from the shard name when it is omitted.
+
+```
+cargo install patpubrender --features shard
+```
 
 ## Python
 
-A Python SDK (structured `Document` access + `to_markdown`) is published to
-PyPI from [`python/`](python/):
-
-```bash
-pip install patpubrender
-```
+A Python extension is published to PyPI from [`python/`](python/).
 
 ```python
 import patpubrender
 doc = patpubrender.parse(open("US12345678.xml").read())
-print(doc.title, doc.claims[0].text)
-md = doc.to_markdown(template="{{title}}\n\n{{claims}}")
+doc.title, doc.claims[0].text
+doc.to_markdown(template="{{title}}\n\n{{claims}}")
 ```
 
 ## License
 
-Licensed under the [Apache License, Version 2.0](LICENSE). See [NOTICE](NOTICE).
-
-This project parses USPTO patent data formats but is not affiliated with or
-endorsed by the USPTO.
+Apache 2.0; see [LICENSE](LICENSE) and [NOTICE](NOTICE). Not affiliated with
+or endorsed by the United States Patent and Trademark Office.

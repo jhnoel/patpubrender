@@ -15,6 +15,10 @@ readme = "README.md"
 name = "patpubrender"
 path = "src/bin/patpubrender.rs"
 
+# Render the shard-gated API on docs.rs.
+[package.metadata.docs.rs]
+all-features = true
+
 [features]
 # Default: parse + model + Markdown render — depends only on xmloxide.
 default = []

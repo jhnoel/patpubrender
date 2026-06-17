@@ -1,44 +1,46 @@
-# patpubrender (Python)
+# patpubrender
 
-Python bindings for [`patpubrender`](https://github.com/jhnoel/patpubrender) —
-parse USPTO patent grant/application XML into a structured document and render
-compact Markdown. The heavy lifting is done in Rust.
+A Python extension for [patpubrender](https://github.com/jhnoel/patpubrender):
+parse USPTO patent grant and application XML into a document object, and render
+Markdown. The implementation is Rust, compiled to a native extension.
 
-```bash
+```
 pip install patpubrender
 ```
+
+## Usage
 
 ```python
 import patpubrender
 
 xml = open("US12345678.xml").read()
 
-# One-shot render
+# render
 md = patpubrender.parse_to_markdown(xml)
 md = patpubrender.parse_to_markdown(xml, template="{{title}}\n\n{{claims}}")
 
-# Structured access
+# document object
 doc = patpubrender.parse(xml)
-doc.publication_number      # -> str | None
-doc.title                   # -> str | None
-doc.inventors               # -> list[str]
-doc.claims[0].number        # -> int
-doc.claims[0].text          # -> str
-doc.abstract_text           # -> str | None
-doc.to_markdown()           # -> str
-doc.to_markdown(template="{{frontmatter}}\n\n{{abstract}}\n\n{{claims}}")
+doc.publication_number     # str | None
+doc.title                  # str | None
+doc.inventors              # list[str]
+doc.claims[0].number       # int
+doc.claims[0].text         # str
+doc.abstract_text          # str | None
+doc.to_markdown()          # str
 
-patpubrender.detect_format(xml)   # -> str, e.g. "UsptoGrantV47"
+patpubrender.detect_format(xml)   # "UsptoGrantV47"
 ```
+
+Unrecognized or malformed input raises `ValueError`.
 
 ## Templates
 
-`to_markdown` / `parse_to_markdown` accept an optional section-placeholder
-template. Placeholders: `{{frontmatter}}`, `{{title}}`, `{{abstract}}`,
-`{{description}}`, `{{claims}}`. Each expands to a fully-rendered block
-(`{{title}}` already includes its `# ` heading); the template controls section
-order and surrounding text.
+`to_markdown` and `parse_to_markdown` take an optional template: text with
+`{{frontmatter}}`, `{{title}}`, `{{abstract}}`, `{{description}}`, and
+`{{claims}}` placeholders. Each expands to a complete block, heading included.
+The template fixes order and surrounding text.
 
 ## License
 
-Apache-2.0.
+Apache 2.0.
