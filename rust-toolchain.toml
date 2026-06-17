@@ -1,0 +1,4 @@
+[toolchain]
+# Edition 2024 requires Rust 1.85 or newer (also the MSRV floor in Cargo.toml).
+channel = "stable"
+components = ["rustfmt", "clippy"]

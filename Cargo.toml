@@ -1,0 +1,34 @@
+[package]
+name = "patpubrender"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "Apache-2.0"
+description = "Parse USPTO patent grant/application XML (and Green Book APS) into a canonical document model and render compact Markdown. Optional zstd shard codec for addressable bulk storage."
+repository = "https://github.com/jhnoel/patpubrender"
+homepage = "https://github.com/jhnoel/patpubrender"
+keywords = ["uspto", "patent", "xml", "markdown", "parser"]
+categories = ["parsing", "text-processing", "command-line-utilities"]
+readme = "README.md"
+
+[[bin]]
+name = "patpubrender"
+path = "src/bin/patpubrender.rs"
+
+[features]
+# tier 1 (default): parse + model + Markdown render — depends only on xmloxide.
+default = []
+# tier 2: the shard codec (write frames + idx, read a frame back by pointer).
+# Write and read live together so the on-disk format has a single owner.
+shard = ["dep:zstd"]
+# tier 3: bulk ingest of USPTO weekly ZIPs into shards (implies the codec).
+ingest = ["shard", "dep:zip", "dep:rayon"]
+
+[dependencies]
+xmloxide = "0.4.1"
+zstd = { version = "0.13", optional = true }
+zip = { version = "2", default-features = false, features = ["deflate"], optional = true }
+rayon = { version = "1.10", optional = true }
+
+[dev-dependencies]
+tempfile = "3.23"
