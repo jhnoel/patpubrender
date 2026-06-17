@@ -3,5 +3,9 @@
 # version drift (see the matching dtolnay/rust-toolchain refs under
 # .github/workflows/). Bump this and those refs together. The MSRV floor for
 # consumers is separate: rust-version in Cargo.toml (1.85).
+#
+# No `components` key here on purpose: forcing component installs from the
+# manifest conflicts with the toolchain CI lays down (rustfmt-preview vs
+# bin/cargo-fmt). The default rustup profile already carries clippy/rustfmt
+# locally, and the CI lint job requests them explicitly.
 channel = "1.96.0"
-components = ["rustfmt", "clippy"]
