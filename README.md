@@ -30,6 +30,21 @@ Each rendered document begins with a YAML frontmatter block (publication/patent
 numbers, dates, application number, classifications, priority chain) followed by
 the title, abstract, claims, and description.
 
+### Custom templates
+
+Override the default layout with a section-placeholder template — plain text
+with `{{placeholder}}` tokens. The placeholders are `frontmatter`, `title`,
+`abstract`, `description`, `claims`, and `body` (abstract + description + claims
+in source order). Each section is still rendered internally; the template only
+controls order and surrounding text. No expression language, no dependency.
+
+```rust
+let tmpl = "# {{title}}\n\n> Source: USPTO\n\n{{claims}}\n\n{{frontmatter}}";
+let md = patpubrender::render_markdown_with_template(&doc, tmpl)?;
+```
+
+From the CLI: `patpubrender render US123.xml --template my.md`.
+
 ### Shard codec (`--features shard`)
 
 A shard is a pair of files: `<stem>.zst` holds one independent zstd frame per
@@ -49,10 +64,12 @@ into a shard plus a `.biblio.jsonl` sidecar and a `.manifest.json`.
 ## CLI
 
 ```
-patpubrender render [INPUT] [--output OUT]
+patpubrender render [INPUT] [--output OUT] [--template FILE]
     INPUT: a file, a directory, or - / omitted for stdin
     file / stdin → stdout (or --output FILE)
     directory    → all docs concatenated to stdout, or one .md per file into --output DIR
+    --template   → a .md template with {{frontmatter}}/{{title}}/{{abstract}}/
+                   {{description}}/{{claims}}/{{body}} placeholders
 
 patpubrender shard write (--zip ZIP | --dir DIR_OF_ZIPS) [--output DIR] [--limit N] [--jobs N]
     (requires --features ingest)

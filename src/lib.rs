@@ -24,7 +24,8 @@ pub mod ingest;
 
 use error::{ParseError, SerializeError};
 use model::document::PatentDocument;
-pub use render::markdown::render_markdown;
+pub use render::markdown::{render_markdown, render_markdown_with_template};
+pub use render::template::{DEFAULT_TEMPLATE, Template, TemplateError};
 use source::aps::UsptoGrantApsGreenBookAdapter;
 pub use source::detect::{SourceFormat, detect_source_format};
 use source::traits::FormatAdapter;

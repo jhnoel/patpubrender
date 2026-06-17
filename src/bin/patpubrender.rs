@@ -26,10 +26,12 @@ fn main() {
 
 fn usage_exit() -> ! {
     eprintln!("Usage:");
-    eprintln!("  patpubrender render [INPUT] [--output <path>]");
+    eprintln!("  patpubrender render [INPUT] [--output <path>] [--template <file>]");
     eprintln!("      INPUT: a file, a directory, or - / omitted for stdin");
     eprintln!("      file/stdin -> stdout (or --output FILE)");
     eprintln!("      directory  -> all docs to stdout, or one .md per file into --output DIR");
+    eprintln!("      --template: a .md template with {{frontmatter}}/{{title}}/{{abstract}}/");
+    eprintln!("                  {{description}}/{{claims}}/{{body}} placeholders");
     eprintln!("  patpubrender shard write (--zip <zip> | --dir <dir>) [--output <dir>] [--limit <n>] [--jobs <n>]");
     eprintln!("      (requires the `ingest` feature)");
     eprintln!("  patpubrender shard read --shard <file.zst> (--key <k> | --offset <n> --length <l>) [--index <file.idx>] [--output <path>]");
@@ -49,6 +51,7 @@ fn fail(msg: impl AsRef<str>) -> ! {
 fn run_render(args: &[String]) {
     let mut input: Option<String> = None;
     let mut output: Option<String> = None;
+    let mut template: Option<String> = None;
 
     let mut i = 0;
     while i < args.len() {
@@ -56,6 +59,14 @@ fn run_render(args: &[String]) {
             "--output" => {
                 i += 1;
                 output = Some(args.get(i).unwrap_or_else(|| fail("--output requires a path")).clone());
+            }
+            "--template" => {
+                i += 1;
+                let path = args.get(i).unwrap_or_else(|| fail("--template requires a path"));
+                template = Some(
+                    fs::read_to_string(path)
+                        .unwrap_or_else(|e| fail(format!("reading template '{path}': {e}"))),
+                );
             }
             other if other.starts_with("--") => fail(format!("unknown flag '{other}'")),
             other => {
@@ -68,19 +79,20 @@ fn run_render(args: &[String]) {
         i += 1;
     }
 
+    let template = template.as_deref();
     let is_dir = input
         .as_deref()
         .filter(|p| *p != "-")
         .is_some_and(|p| Path::new(p).is_dir());
 
     if is_dir {
-        render_dir(Path::new(input.as_deref().unwrap()), output.as_deref());
+        render_dir(Path::new(input.as_deref().unwrap()), output.as_deref(), template);
     } else {
-        render_single(input.as_deref(), output.as_deref());
+        render_single(input.as_deref(), output.as_deref(), template);
     }
 }
 
-fn render_single(input: Option<&str>, output: Option<&str>) {
+fn render_single(input: Option<&str>, output: Option<&str>, template: Option<&str>) {
     let xml = match input {
         Some(path) if path != "-" => fs::read_to_string(path)
             .unwrap_or_else(|e| fail(format!("reading '{path}': {e}"))),
@@ -97,7 +109,7 @@ fn render_single(input: Option<&str>, output: Option<&str>) {
         fail("empty input");
     }
 
-    let md = render_xml(&xml, input.filter(|p| *p != "-"));
+    let md = render_xml(&xml, input.filter(|p| *p != "-"), template);
 
     match output {
         Some(path) => {
@@ -108,7 +120,7 @@ fn render_single(input: Option<&str>, output: Option<&str>) {
     }
 }
 
-fn render_dir(dir: &Path, output: Option<&str>) {
+fn render_dir(dir: &Path, output: Option<&str>, template: Option<&str>) {
     let mut xml_files: Vec<PathBuf> = fs::read_dir(dir)
         .unwrap_or_else(|e| fail(format!("reading directory '{}': {e}", dir.display())))
         .filter_map(Result::ok)
@@ -126,7 +138,7 @@ fn render_dir(dir: &Path, output: Option<&str>) {
         None => {
             let docs: Vec<String> = xml_files
                 .iter()
-                .map(|path| render_xml(&read_file(path), Some(&path.to_string_lossy())))
+                .map(|path| render_xml(&read_file(path), Some(&path.to_string_lossy()), template))
                 .collect();
             write_stdout(docs.join(DOC_SEPARATOR).as_bytes());
         }
@@ -136,7 +148,7 @@ fn render_dir(dir: &Path, output: Option<&str>) {
             fs::create_dir_all(out_dir)
                 .unwrap_or_else(|e| fail(format!("creating '{}': {e}", out_dir.display())));
             for path in &xml_files {
-                let md = render_xml(&read_file(path), Some(&path.to_string_lossy()));
+                let md = render_xml(&read_file(path), Some(&path.to_string_lossy()), template);
                 let stem = path.file_stem().and_then(|s| s.to_str()).unwrap_or("document");
                 let out_path = out_dir.join(format!("{stem}.md"));
                 fs::write(&out_path, md)
@@ -147,7 +159,7 @@ fn render_dir(dir: &Path, output: Option<&str>) {
     }
 }
 
-fn render_xml(xml: &str, label: Option<&str>) -> String {
+fn render_xml(xml: &str, label: Option<&str>, template: Option<&str>) -> String {
     let doc = patpubrender::parse_patent_xml(xml).unwrap_or_else(|e| {
         let where_ = label.map(|l| format!(" from '{l}'")).unwrap_or_default();
         fail(format!("parsing XML{where_}: {e}"))
@@ -155,7 +167,11 @@ fn render_xml(xml: &str, label: Option<&str>) -> String {
     if let Some(label) = label {
         eprintln!("{label}: detected {:?}", doc.source_format);
     }
-    patpubrender::render_markdown(&doc)
+    match template {
+        Some(template) => patpubrender::render_markdown_with_template(&doc, template)
+            .unwrap_or_else(|e| fail(format!("template: {e}"))),
+        None => patpubrender::render_markdown(&doc),
+    }
 }
 
 fn read_file(path: &Path) -> String {

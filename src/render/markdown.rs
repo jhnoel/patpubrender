@@ -1,3 +1,4 @@
+use crate::render::template::{Sections, Template, TemplateError};
 use crate::model::document::PatentDocument;
 use crate::model::{
     bibliographic::{
@@ -15,60 +16,107 @@ use crate::model::{
     runs::Run,
 };
 
+/// Render `value` to Markdown using the default layout.
 pub fn render_markdown(value: &PatentDocument) -> String {
+    Template::default().render(&build_sections(value))
+}
+
+/// Render `value` with a caller-supplied section-placeholder template.
+///
+/// The template is plain text with `{{placeholder}}` tokens — `frontmatter`,
+/// `title`, `abstract`, `description`, `claims`, or `body` (abstract +
+/// description + claims in source order). See [`crate::render::template`].
+pub fn render_markdown_with_template(
+    value: &PatentDocument,
+    template: &str,
+) -> Result<String, TemplateError> {
+    Ok(Template::parse(template)?.render(&build_sections(value)))
+}
+
+fn build_sections(value: &PatentDocument) -> Sections {
+    Sections {
+        frontmatter: render_frontmatter(value),
+        title: render_title(value),
+        r#abstract: render_parts(value, |part| {
+            matches!(part, DocumentPart::AbstractSection(_))
+        }),
+        description: render_parts(value, |part| matches!(part, DocumentPart::Description(_))),
+        claims: render_parts(value, |part| matches!(part, DocumentPart::Claims(_))),
+        body: render_parts(value, |_| true),
+    }
+}
+
+fn render_frontmatter(value: &PatentDocument) -> String {
     let mut lines = Vec::new();
-
     push_frontmatter(&mut lines, value);
+    trim_join(lines)
+}
 
-    if let Some(title) = title(value) {
-        lines.push(format!("# {title}"));
-        lines.push(String::new());
+fn render_title(value: &PatentDocument) -> String {
+    match title(value) {
+        Some(title) => format!("# {title}"),
+        None => String::new(),
     }
+}
 
-    if lines.last().is_some_and(|line| !line.is_empty()) {
-        lines.push(String::new());
-    }
+/// Render the document parts matching `keep`, in source order, each as its own
+/// block, joined by a single blank line.
+fn render_parts(value: &PatentDocument, keep: impl Fn(&DocumentPart) -> bool) -> String {
+    value
+        .parts
+        .iter()
+        .filter(|part| keep(part))
+        .map(render_part_block)
+        .filter(|block| !block.is_empty())
+        .collect::<Vec<_>>()
+        .join("\n\n")
+}
 
-    for part in &value.parts {
-        match part {
-            DocumentPart::AbstractSection(section) => {
-                lines.push("## Abstract".to_string());
-                for part in &section.parts {
-                    match part {
-                        AbstractPart::Paragraph(paragraph) => {
-                            push_paragraph(&mut lines, render_paragraph_text(paragraph));
-                        }
-                        AbstractPart::Opaque(value) => push_xml_fragment(&mut lines, &value.xml),
+fn render_part_block(part: &DocumentPart) -> String {
+    let mut lines = Vec::new();
+    match part {
+        DocumentPart::AbstractSection(section) => {
+            lines.push("## Abstract".to_string());
+            for part in &section.parts {
+                match part {
+                    AbstractPart::Paragraph(paragraph) => {
+                        push_paragraph(&mut lines, render_paragraph_text(paragraph));
                     }
-                }
-                lines.push(String::new());
-            }
-            DocumentPart::Description(description) => {
-                for part in &description.parts {
-                    render_description_part(&mut lines, part);
+                    AbstractPart::Opaque(value) => push_xml_fragment(&mut lines, &value.xml),
                 }
             }
-            DocumentPart::Claims(claims) => {
-                lines.push("## Claims".to_string());
-                for part in &claims.parts {
-                    match part {
-                        ClaimsPart::Heading(heading) => {
-                            push_non_empty_line(&mut lines, flatten_runs(&heading.content));
-                        }
-                        ClaimsPart::Claim(claim) => render_claim(&mut lines, claim),
-                        ClaimsPart::Opaque(value) => push_xml_fragment(&mut lines, &value.xml),
-                    }
-                }
-            }
-            DocumentPart::Opaque(value) => push_xml_fragment(&mut lines, &value.xml),
-            _ => {}
         }
+        DocumentPart::Description(description) => {
+            for part in &description.parts {
+                render_description_part(&mut lines, part);
+            }
+        }
+        DocumentPart::Claims(claims) => {
+            lines.push("## Claims".to_string());
+            for part in &claims.parts {
+                match part {
+                    ClaimsPart::Heading(heading) => {
+                        push_non_empty_line(&mut lines, flatten_runs(&heading.content));
+                    }
+                    ClaimsPart::Claim(claim) => render_claim(&mut lines, claim),
+                    ClaimsPart::Opaque(value) => push_xml_fragment(&mut lines, &value.xml),
+                }
+            }
+        }
+        DocumentPart::Opaque(value) => push_xml_fragment(&mut lines, &value.xml),
+        _ => {}
     }
+    trim_join(lines)
+}
 
+/// Drop leading and trailing blank lines, then join with newlines.
+fn trim_join(mut lines: Vec<String>) -> String {
+    while lines.first().is_some_and(|line| line.is_empty()) {
+        lines.remove(0);
+    }
     while lines.last().is_some_and(|line| line.is_empty()) {
         lines.pop();
     }
-
     lines.join("\n")
 }
 
