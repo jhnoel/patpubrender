@@ -455,17 +455,17 @@ fn parse_description(document: &xmloxide::Document, node: NodeId) -> Description
                     }
                 }
             },
-            NodeKind::Text { content } | NodeKind::CData { content } => {
-                if !content.trim().is_empty() {
-                    if let Some(bucket) = active.as_mut() {
-                        bucket.push_opaque(OpaqueBlock {
-                            xml: xml::xml_fragment(document, child),
-                        });
-                    } else {
-                        parts.push(DescriptionPart::Opaque(OpaqueBlock {
-                            xml: xml::xml_fragment(document, child),
-                        }));
-                    }
+            NodeKind::Text { content } | NodeKind::CData { content }
+                if !content.trim().is_empty() =>
+            {
+                if let Some(bucket) = active.as_mut() {
+                    bucket.push_opaque(OpaqueBlock {
+                        xml: xml::xml_fragment(document, child),
+                    });
+                } else {
+                    parts.push(DescriptionPart::Opaque(OpaqueBlock {
+                        xml: xml::xml_fragment(document, child),
+                    }));
                 }
             }
             _ => {}
