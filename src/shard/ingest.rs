@@ -34,6 +34,7 @@ pub struct ShardStats {
 }
 
 /// How a record that failed to render is classified.
+#[derive(Debug, PartialEq, Eq)]
 enum SkipKind {
     /// Well-formed non-patent record (e.g. `sequence-cwu` sequence listings). Normal.
     Supplemental,
@@ -622,5 +623,13 @@ mod tests {
         assert_eq!(docs.len(), 2);
         assert!(docs[0].contains("xml-stylesheet"));
         assert!(docs[1].contains("sequence-cwu"));
+    }
+
+    #[test]
+    fn sequence_cwu_is_supplemental_skip() {
+        let error = crate::parse_patent_xml("<?xml version=\"1.0\"?><sequence-cwu/>")
+            .expect_err("sequence-cwu should not parse as a patent document");
+
+        assert_eq!(classify_skip(&error), SkipKind::Supplemental);
     }
 }

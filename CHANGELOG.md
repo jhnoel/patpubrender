@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] - 2026-06-23
+
+- Add release coverage for treating non-patent supplemental XML roots such as
+  `sequence-cwu` as supplemental skips during shard ingest.
+- Ship the post-0.1.0 documentation and end-to-end examples.
+
 ## [0.1.0] - 2026-06-17
 
 First release.
