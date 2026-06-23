@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.2] - 2026-06-23
+
+- Classify known USPTO supplemental XML roots (`sequence-cwu`, `table`) separately
+  from true unsupported patent XML roots.
+- Keep shard ingest supplemental skips limited to known supplemental roots; unknown
+  XML roots now remain fixable unsupported records.
+
 ## [0.1.1] - 2026-06-23
 
 - Add release coverage for treating non-patent supplemental XML roots such as

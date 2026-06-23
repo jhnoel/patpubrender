@@ -46,9 +46,10 @@ enum SkipKind {
 
 fn classify_skip(error: &ParseError) -> SkipKind {
     match error {
-        ParseError::Detect(DetectError::UnsupportedRoot(_)) => SkipKind::Supplemental,
+        error if error.is_supplemental_root() => SkipKind::Supplemental,
         ParseError::Detect(DetectError::UnknownFormat)
         | ParseError::Detect(DetectError::ConflictingVersionMarkers)
+        | ParseError::Detect(DetectError::UnsupportedRoot(_))
         | ParseError::UnsupportedStructure(_) => SkipKind::Unsupported,
         ParseError::Detect(DetectError::MalformedXml) | ParseError::MalformedXml(_) => {
             SkipKind::Malformed
@@ -631,5 +632,33 @@ mod tests {
             .expect_err("sequence-cwu should not parse as a patent document");
 
         assert_eq!(classify_skip(&error), SkipKind::Supplemental);
+        assert_eq!(
+            error.to_string(),
+            "source detection failed: supplemental XML root 'sequence-cwu'"
+        );
+    }
+
+    #[test]
+    fn table_is_supplemental_skip() {
+        let error = crate::parse_patent_xml("<?xml version=\"1.0\"?><table/>")
+            .expect_err("table should not parse as a patent document");
+
+        assert_eq!(classify_skip(&error), SkipKind::Supplemental);
+        assert_eq!(
+            error.to_string(),
+            "source detection failed: supplemental XML root 'table'"
+        );
+    }
+
+    #[test]
+    fn unknown_root_is_unsupported_skip() {
+        let error = crate::parse_patent_xml("<?xml version=\"1.0\"?><not-a-patent/>")
+            .expect_err("unknown root should not parse as a patent document");
+
+        assert_eq!(classify_skip(&error), SkipKind::Unsupported);
+        assert_eq!(
+            error.to_string(),
+            "source detection failed: unsupported XML root 'not-a-patent'"
+        );
     }
 }
